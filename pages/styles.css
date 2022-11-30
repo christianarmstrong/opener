@@ -78,8 +78,11 @@ br.responsive {
 .header-subsubtitle h2 {
     font-size: 25px;
     font-style: normal;
+    text-align: center;
     font-weight: 900;
-    line-height: 2em;
+    margin-right: 5px;
+    margin-left: 5px;
+    line-height: 1.2em;
     margin-top: 0px;
     color: rgba(255, 255, 255, 1);
     margin-bottom: -35px;
@@ -90,6 +93,7 @@ br.responsive {
     font-style: normal;
     font-weight: 400;
     line-height: 1em;
+    margin-left: 5px;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -124,6 +128,8 @@ br.responsive {
     overflow: hidden;
     padding: 20px;
     position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
     width: 610px;
     max-width: 1200px;
     will-change: transform;
@@ -456,7 +462,7 @@ textarea {
     }
 
     .prompt-box {
-        width: 100%;
+        width: 80%;
     }
 }
 
