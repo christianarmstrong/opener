@@ -396,13 +396,22 @@ textarea {
     transform: none;
     font-size: 20px;
     line-height: 1.5em;
-    margin-top: -2em;
+
 }
 
 .output-content p {
     text-align: center;
-    white-space: pre-line;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
+    border-bottom-width: 1px;
+    border-color: rgba(0, 0, 0, 0.75);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top-width: 1px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10% 15%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .9);
+    ;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
