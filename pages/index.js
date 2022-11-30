@@ -44,7 +44,7 @@ const Home = () => {
             <h2>The best way to open a conversation.</h2>
           </div>
           <div className="header-subtitle">
-            <h2>Describe who you want to talk to and get the perfect opening line.</h2>
+            <h2>Describe who you want to talk to and <br class="responsive" /> get the perfect opening line.</h2>
           </div>
         </div>
         <div className="prompt-container">
@@ -72,7 +72,7 @@ const Home = () => {
           />;
 
           <div className="prompt-headers">
-            <h2>What does their bio say about them?</h2>
+            <h2>What does their bio say <br class="responsive" /> about them?</h2>
           </div>
 
           <textarea
