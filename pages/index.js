@@ -34,7 +34,7 @@ const Home = () => {
     document.getElementById("enterDescriptionText").style.display = "none";
     document.getElementById("enterDescriptionBox").style.display = "none";
     document.getElementById("enterGenerateButton").style.display = "none";
-    document.getElementById("enterHeader").style.display = "none";
+    document.getElementById("subsubtitle").style.display = "none";
     document.getElementById("Try Again").style.visibility = "visible"
     document.getElementById("retryButton").style.visibility = "visible"
     document.getElementById("retryText").style.visibility = "visible"
@@ -71,8 +71,8 @@ const Home = () => {
           <div className="header-subtitle">
             <h2>The best way to open a conversation.</h2>
           </div>
-          <div className="header-subtitle">
-            <h2>Describe who you want to talk to and <br class="responsive" /> get the perfect opening line.</h2>
+          <div className="header-subsubtitle" id="subsubtitle">
+            <h2>Describe who you want to talk to and <br class="responsive" /> get the perfect opening line!</h2>
           </div>
         </div>
         <div className="prompt-container" id="prompts">
