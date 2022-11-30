@@ -48,12 +48,12 @@ body {
 }
 
 br.responsive {
-    display: none;
+    display: inline;
 }
 
 @media (min-width: 480px) {
     br.responsive {
-        display: inline;
+        display: none;
     }
 }
 
@@ -71,7 +71,7 @@ br.responsive {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: .1em;
+    line-height: 1em;
     color: rgba(255, 255, 255, 0.75);
 }
 
@@ -79,7 +79,7 @@ br.responsive {
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    line-height: .1em;
+    line-height: 1em;
     color: rgba(255, 255, 255, 1);
 }
 
