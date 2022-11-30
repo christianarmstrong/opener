@@ -8,7 +8,7 @@ export default function Document() {
         <meta property="og:description" content="The Best Way to Open a Conversation" key="description" />
         <meta
           property="og:image"
-          content="/opener/assets/openerLinkPicture.png"
+          content="../assets/OpenerLink.png"
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
