@@ -394,6 +394,9 @@ textarea {
     justify-content: flex-start;
     flex-shrink: 0;
     transform: none;
+    font-size: 20px;
+    line-height: 1.5em;
+    margin-top: -2em;
 }
 
 .output-content p {
@@ -467,6 +470,38 @@ textarea {
     }
 }
 
+@media (max-width: 420px) {
+    .container {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .header-title h1 {
+        font-size: 75px;
+    }
+
+    .header-subtitle h2 {
+        text-align: center;
+    }
+
+    .key-stroke,
+    .or {
+        display: none;
+    }
+
+    .prompt-buttons {
+        justify-content: center;
+    }
+
+    .prompt-container {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .prompt-box {
+        width: 80%;
+    }
+}
 
 
 /* Loading ring animation */
