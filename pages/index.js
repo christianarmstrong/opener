@@ -73,7 +73,7 @@ const Home = () => {
             <h2>The best way to open a conversation.</h2>
           </div>
           <div className="header-subsubtitle" id="subsubtitle">
-            <h2>Describe your match to and get the perfect opening line!</h2>
+            <h2>Describe your match to get the perfect opening line!</h2>
           </div>
           <div className="output-header-container" id="openerHeading">
             <div className="output-header" >
