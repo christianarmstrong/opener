@@ -39,6 +39,8 @@ Example prompt: vibing at 19 ༶•┼•༶ Rebellious Gemini ༶•┼•༶
 
 Example output: So what kind of rebellious things do you like to do?
 
+Girl:
+
 
 `;
 const generateAction = async (req, res) => {
