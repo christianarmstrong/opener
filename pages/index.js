@@ -38,6 +38,7 @@ const Home = () => {
     document.getElementById("Try Again").style.visibility = "visible"
     document.getElementById("retryButton").style.visibility = "visible"
     document.getElementById("retryText").style.visibility = "visible"
+    document.getElementById("openerHeading").style.visibility = "visible"
   }
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
@@ -73,6 +74,11 @@ const Home = () => {
           </div>
           <div className="header-subsubtitle" id="subsubtitle">
             <h2>Describe your match to and get the perfect opening line!</h2>
+          </div>
+          <div className="output-header-container" id="openerHeading">
+            <div className="output-header" >
+              <h3>Your Perfect Opener</h3>
+            </div>
           </div>
         </div>
         <div className="prompt-container" id="prompts">
@@ -126,11 +132,6 @@ const Home = () => {
           </div>
           {apiOutput && (
             <div className="output">
-              <div className="output-header-container">
-                <div className="output-header">
-                  <h3>Your Perfect Opener</h3>
-                </div>
-              </div>
               <div className="output-content">
                 <p>{apiOutput}</p>
               </div>
