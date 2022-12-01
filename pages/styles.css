@@ -110,6 +110,10 @@ br.responsive {
     width: 100%;
 }
 
+.prompt-box::placeholder {
+    color: rgb(255, 255, 255, .75);
+}
+
 .prompt-box {
     border-bottom-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);
@@ -142,7 +146,7 @@ br.responsive {
     letter-spacing: 0px;
     line-height: .6em;
     text-align: start;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
     text-transform: none;
 }
@@ -399,23 +403,13 @@ textarea {
     transform: none;
     font-size: 20px;
     line-height: 1.5em;
-
+    width: 50%
 }
 
 .output-content p {
     text-align: center;
     color: rgba(255, 255, 255, 1);
-    border-bottom-width: 1px;
-    border-color: rgba(0, 0, 0, 0.75);
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-style: solid;
-    border-top-width: 1px;
-    padding: 20px;
-    background-image: linear-gradient(to bottom right, rgb(255, 128, 72), rgb(136, 8, 8, 1));
-    ;
-    border-radius: 80px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, .9);
+
     ;
 }
 

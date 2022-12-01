@@ -39,6 +39,7 @@ const Home = () => {
     document.getElementById("retryButton").style.visibility = "visible"
     document.getElementById("retryText").style.visibility = "visible"
     document.getElementById("openerHeading").style.visibility = "visible"
+    document.getElementById("prompts").style.width = "50%";
   }
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
@@ -113,7 +114,7 @@ const Home = () => {
 
           <textarea
             className="prompt-box"
-            placeholder="Describe them"
+            placeholder="Hint: Copy + Paste their bio - everything you can get"
             value={userInput}
             onChange={onUserChangedText}
             id="enterDescriptionBox"
