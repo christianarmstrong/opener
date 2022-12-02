@@ -1,4 +1,6 @@
 import Head from 'next/head';
+
+
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -64,7 +66,16 @@ const Home = () => {
     <div className="root">
       <Head>
         <title>Opener</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QE8Z2R24F"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+
+          gtag('config', 'G-3QE8Z2R24F');
+        </script>
       </Head>
+
       <div className="container">
         <div className="header" id="enterHeader">
           <div className="header-title">
