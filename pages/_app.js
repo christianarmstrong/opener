@@ -1,22 +1,16 @@
 import './styles.css';
 
-import * as gtag from '../lib/gtag.js'
+
 import { useRouter } from 'next/router'
 import { hotjar } from 'react-hotjar'
 import { useEffect } from 'react'
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-3QE8Z2R24F"; // YOUR_OWN_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App({ Component, pageProps }) {
   const router = useRouter()
 
-  useEffect(() => {
-    const handleRouteChange = url => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
 
   useEffect(() => {
     hotjar.initialize(3272704, 6)
