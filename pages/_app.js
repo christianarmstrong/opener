@@ -1,6 +1,6 @@
 import './styles.css';
 
-import * as gtag from 'lib/gtag'
+import * as gtag from '../lib/gtag.js'
 import { useRouter } from 'next/router'
 import { hotjar } from 'react-hotjar'
 import { useEffect } from 'react'
