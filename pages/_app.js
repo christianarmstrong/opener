@@ -11,10 +11,10 @@ ReactGA.initialize(TRACKING_ID);
 function App({ Component, pageProps }) {
   const router = useRouter()
 
-
   useEffect(() => {
     hotjar.initialize(3272704, 6)
   }, [])
+
   return <Component {...pageProps} />
 }
 export default App;

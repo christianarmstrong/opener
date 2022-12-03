@@ -28,8 +28,7 @@ const Home = () => {
 
     //create a login page that will store the user's age and name in a database
 
-
-
+    //create a page that will disp
 
 
 
