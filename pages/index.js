@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 
+
+
 const Home = () => {
   const [age_userInput, age_setUserInput] = useState('');
   const [name_userInput, name_setUserInput] = useState('');
@@ -22,6 +24,14 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput }),
     });
+
+
+    //create a login page that will store the user's age and name in a database
+
+
+
+
+
 
     const data = await response.json();
     const { output } = data;

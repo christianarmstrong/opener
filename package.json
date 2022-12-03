@@ -1,6 +1,8 @@
 {
-  "name": "scratchpad",
-  "version": "0.1.0",
+  "name": "hostinger-react",
+  "homepage": "https://opener.chat",
+  "version": "1.0.0",
+  "description": "my react application",
   "private": true,
   "scripts": {
     "dev": "next dev",
