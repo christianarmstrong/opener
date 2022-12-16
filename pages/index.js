@@ -77,50 +77,6 @@ const Home = () => {
         <title>Opener</title>
 
       </Head>
-      <div className={styles.macBookPro161}>
-        <img
-          className={styles.backgroundIcon}
-          alt=""
-          src="../background@2x.png"
-        />
-        <img
-          className={styles.signUpButtonIcon}
-          alt=""
-          src="../signupbutton@2x.png"
-        />
-        <a className={styles.logo} href="https://opener.chat" />
-        <div className={styles.middleText}>
-          The best way to start a conversation. Proven to increase your chances of
-          getting a response. Sign up today and get 5 prompts free!
-        </div>
-        <div className={styles.signUpText}>Sign up</div>
-        <a className={styles.aboutUs}>About us</a>
-        <div className={styles.pricing}>Pricing</div>
-        <div className={styles.reviews}>Reviews</div>
-        <div className={styles.contactUs}>Contact us</div>
-        <div className={styles.logIn}>Log in</div>
-        <img
-          className={styles.getStartedButtonIcon}
-          alt=""
-          src="../getstartedbutton@2x.png"
-        />
-        <b className={styles.getStartedText}>Get Started</b>
-        <div className={styles.learnMore}>{`Learn More `}</div>
-        <img className={styles.facebookIcon} alt="" src="../facebook@2x.png" />
-        <img className={styles.twitterIcon} alt="" src="../twitter@2x.png" />
-        <img className={styles.arrowIcon} alt="" src="../arrow@2x.png" />
-        <img className={styles.instagramIcon} alt="" src="../instagram@2x.png" />
-        <h1 className={styles.headerText} id="openerTitle" data-animate-on-scroll>
-          <p className={styles.welcomeTo}>Welcome to</p>
-          <p className={styles.opener}> Opener</p>
-        </h1>
-        <div className={styles.macBookPro164}>
-          <div className={styles.background} />
-        </div>
-        <img className={styles.wiggle221} alt="" src="../wiggle2-2-1@2x.png" />
-      </div>
-
-
 
       <div className="container">
         <div className="header" id="enterHeader">
