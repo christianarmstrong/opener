@@ -1,3 +1,4 @@
 # Opener - The best place to open a conversation
 ### Welcome 👋
-This is the repo for the Opener app.
+
+Just enter the name, age, and bio of the person you want to talk to and. Boom! The perfect opener!
