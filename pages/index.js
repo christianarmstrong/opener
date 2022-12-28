@@ -93,7 +93,7 @@ const Home = () => {
             <img src="background.png" className="backgroundImage" />
           </picture>
 
-          <h1 className="relative leading-[4rem] mt-[-1em] md:mt-[1] min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
+          <h1 className="relative leading-[4rem] mt-[-1em] md:mt-[1] lg:mt-6 min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
             <p className="">Welcome to</p>
             <p className=" lg:pl-56" > Opener</p>
           </h1>
@@ -240,9 +240,9 @@ const Home = () => {
                 </div>
 
                 <textarea
-                  className="relative mt-1 lg:mt-3 w-auto placeholder:text-xs text-xs text-white mb-5 ml-[7%]  h-[8rem] bg-gradient-to-br from-[#dc6945] to-[#b94834] border-[1.75px]
+                  className="relative mt-1 lg:mt-3 placeholder:text-xs text-xs text-white mb-5 ml-[7%]  h-[8rem] bg-gradient-to-br from-[#dc6945] to-[#b94834] border-[1.75px]
                         border-[#DA9C93] rounded-[30px] shadow-black/25 shadow-md  
-                        text-[1em] p-3 pt-4  placeholder-white/50 batangas left-[1%] sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] lg:h-[10rem]  "
+                        text-[1em] p-3 pt-4  placeholder-white/50 batangas left-[1%] w-[80%] sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] lg:h-[10rem]  "
                   placeholder="Hint: Copy + Paste their bio here "
                   value={userInput}
                   onChange={onUserChangedText}
