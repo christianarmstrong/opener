@@ -100,7 +100,7 @@ const Home = () => {
 
           <div className="relative text-white text-[1.7em] mx-12 top-56 leading-7  font-light text-center sm:mx-40 sm:text-[2.2em] sm:leading-8 lg:text-left manrope text-opacity-80 lg:w-[18em] lg:leading-10 lg:ml-[20%]">
             The best way to start a conversation. Proven to increase your chances of
-            getting a response. Sign up today and get 5 prompts free!
+            getting a response by 60%! Sign up free today and never say hey again!
           </div>
 
           <div className=''>
