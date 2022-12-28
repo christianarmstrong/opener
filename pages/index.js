@@ -161,7 +161,7 @@ const Home = () => {
           <div className="relative invisible" id="outputBoxWhole">
 
             <div className="" id="Try Again" >
-              <a className='' id="retryButton" onClick={onRetryClicked}>
+              <a className='right-0 bottom-0' id="retryButton" onClick={onRetryClicked}>
 
                 <div className="text-white " id="retryText">
                   <img src="genButtonNoText.png" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
