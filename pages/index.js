@@ -93,7 +93,7 @@ const Home = () => {
             <img src="background.png" className="backgroundImage" />
           </picture>
 
-          <h1 className="relative leading-[4rem] min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
+          <h1 className="relative leading-[4rem] mt-[-1em] md:mt-[1] min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
             <p className="">Welcome to</p>
             <p className=" lg:pl-56" > Opener</p>
           </h1>
@@ -130,7 +130,7 @@ const Home = () => {
 
 
 
-        <a class="fixed mx-auto bottom-0 mb-10 lg:mb-0 lg:left-0 lg:ml-20  " href="https://www.producthunt.com/posts/opener-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=371804&theme=light"
+        <a class="fixed mx-auto bottom-0 mb-[-3em] md:mb-[-1em] lg:mb-0 lg:left-0 lg:ml-20  " href="https://www.producthunt.com/posts/opener-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=371804&theme=light"
           alt="" class="w-64 h-64 lg:w-80 lg:h-80" /></a>
       </SignedOut >
 
