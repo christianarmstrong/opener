@@ -66,12 +66,12 @@ export const Navbar = () => {
 
                             />
                         </Link>
-                        <Link href="/sign-up" >
+                        <a href="https://accounts.opener.chat/sign-up" >
                             <div className="fixed right-0 mr-11 mt-8 text-2xl text-white">Sign up</div>
-                        </Link>
-                        <Link href="/sign-in" >
+                        </a>
+                        <a href="https://accounts.opener.chat/sign-in" >
                             <div className="fixed right-0 mr-44 mt-9 text-2xl text-white invisible sm:visible  ">Log in</div>
-                        </Link>
+                        </a>
                     </div>
                     { /*
                     <div className="fixed md:hidden right-0 mr-5 mt-4">
