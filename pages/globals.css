@@ -1,18 +1,41 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
 
 
+@font-face {
+    font-family: "Batangas";
+    src: url("../assets/fonts/Batangas-Bold.ttf");
+    font-weight: 700;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Batangas', sans-serif;
+}
+
+.manrope {
+    font-family: 'manrope', sans-serif;
+}
+
+.batangas {
+    font-family: 'Batangas', sans-serif;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .root {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-image: linear-gradient(to bottom right, rgb(136, 8, 8, 1), rgb(255, 128, 72));
     flex-flow: column nowrap;
     height: 100vh;
     overflow: auto;
@@ -26,14 +49,13 @@ body {
     align-items: center;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 10px;
-    height: fit-content;
-    max-width: 975px;
+    height: 100vh;
+    max-width: 100vw;
     overflow: auto;
-    padding: 50px;
+
     position: relative;
-    width: auto;
-    gap: 40px;
+    width: 100%;
+
 }
 
 .header {
@@ -44,10 +66,19 @@ body {
     color: #FFF
 }
 
+.backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
 .header-title {
     display: flex;
-    gap: 12px;
-    margin-top: -30px
+
+
 }
 
 br.responsive {
@@ -63,11 +94,11 @@ br.responsive {
 .header-title h1 {
     width: 100%;
     font-weight: 700;
-    font-size: 72px;
-    letter-spacing: -4px;
+    font-size: 6.5em;
+    letter-spacing: -1px;
     line-height: 1.2em;
     text-align: center;
-    margin: 0;
+    margin-top: 20%;
 }
 
 .header-subtitle h2 {
@@ -92,24 +123,13 @@ br.responsive {
 }
 
 .prompt-headers h2 {
-    font-size: 25px;
+    font-size: 2.5em;
     font-style: normal;
     font-weight: 400;
     line-height: 1em;
-    margin-left: 5px;
+    padding-left: 0;
+    margin-bottom: 15px;
     color: rgba(255, 255, 255, 1);
-}
-
-.prompt-container {
-    place-content: flex-end center;
-    align-items: left;
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: column nowrap;
-    margin-top: -3em;
-    height: min-content;
-    padding: 0px;
-    width: 100%;
 }
 
 .prompt-box::placeholder {
@@ -117,40 +137,31 @@ br.responsive {
 }
 
 .prompt-box {
-    border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-style: solid;
-    border-top-width: 1px;
-    place-content: flex-start;
-    align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: column nowrap;
-    gap: 10px;
-    height: 10px;
+
+
+
     overflow: hidden;
     padding: 20px;
-    position: relative;
     margin-left: 5px;
-    margin-right: 5px;
-    width: 610px;
     max-width: 1200px;
     will-change: transform;
     overflow: auto;
-    outline: none;
-    resize: none;
+    box-sizing: border-box;
+    position: relative;
+    width: 556px;
+    height: 93px;
+
+    background: rgba(217, 217, 217, 0.1);
+    border: 1px solid #DA9C93;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 29px;
+
     font-size: 16px;
     font-style: normal;
     letter-spacing: 0px;
-    line-height: .6em;
     text-align: start;
     color: rgba(255, 255, 255, 1);
-    text-decoration: none;
-    text-transform: none;
+
 }
 
 textarea {
@@ -167,7 +178,6 @@ textarea {
     display: flex;
     place-content: center;
     align-items: center;
-    justify-content: flex-end;
     flex: 0 0 auto;
     flex-flow: row nowrap;
     gap: 12px;
@@ -235,6 +245,10 @@ textarea {
     align-items: flex-start;
     background-image: linear-gradient(to bottom right, rgb(255, 128, 72, .1), rgb(136, 8, 8, 1), rgb(136, 8, 8, 1));
     ;
+    /* Group 4 */
+
+
+
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -284,59 +298,9 @@ textarea {
     visibility: hidden;
 }
 
-.loading {
-    opacity: 0.7;
-    cursor: default;
-}
 
-.badge-container {
-    display: flex;
-    bottom: 20px;
-    flex: 0 0 auto;
-    height: auto;
-    left: 20px;
-    position: fixed;
-    width: auto;
-    z-index: 1;
-}
 
-.badge-container a {
-    border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-style: solid;
-    border-top-width: 1px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 54.3478% / 238.095%;
-    filter: grayscale(1);
-    transform: none;
-    transform-origin: 50% 50% 0px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    line-height: 1em;
-    color: #fff;
-    padding: 12px;
-    text-decoration: none;
-}
 
-.badge {
-    display: flex;
-    align-items: center;
-}
-
-.badge img {
-    width: 21px;
-    height: 17px;
-    image-rendering: pixelated;
-    flex-shrink: 0;
-    fill: black;
-    color: black;
-    transform: none;
-    transform-origin: 50% 50% 0px;
-    padding-right: 5px;
-}
 
 .badge p {
     margin: 0;
@@ -370,18 +334,18 @@ textarea {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 16px;
+
     height: min-content;
     overflow: hidden;
     padding: 0px;
     visibility: hidden;
     margin-top: 0em;
     position: relative;
-    width: 400px;
+    width: fit-content;
 }
 
 .output-header h3 {
-    font-family: "Manrope", serif;
+    font-family: "Batangas", serif;
     font-size: 2.5em;
     font-style: normal;
     font-weight: 800;
@@ -465,125 +429,4 @@ textarea {
     width: fit-content;
     height: 50px;
     padding: 5px;
-}
-
-@media (min-width: 810px) and (max-width: 1199px) {
-    .container {
-        max-width: 600px;
-        width: 100%;
-    }
-
-    .prompt-container {
-        max-width: 600px;
-        width: 100%;
-    }
-
-    .prompt-box {
-        width: 100%;
-    }
-}
-
-@media (max-width: 809px) {
-    .container {
-        max-width: 500px;
-        width: 100%;
-    }
-
-    .prompt-container {
-        max-width: 500px;
-        width: 100%;
-    }
-
-    .prompt-box {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        max-width: 400px;
-        width: 100%;
-    }
-
-    .header-title h1 {
-        font-size: 75px;
-    }
-
-    .header-subtitle h2 {
-        text-align: center;
-    }
-
-    .key-stroke,
-    .or {
-        display: none;
-    }
-
-    .prompt-buttons {
-        justify-content: center;
-    }
-
-    .prompt-container {
-        max-width: 400px;
-        width: 100%;
-    }
-
-    .prompt-box {
-        width: 80%;
-    }
-}
-
-@media (max-width: 420px) {
-    .container {
-        max-width: 400px;
-        width: 100%;
-    }
-
-    .header-title h1 {
-        font-size: 75px;
-    }
-
-    .header-subtitle h2 {
-        text-align: center;
-    }
-
-    .key-stroke,
-    .or {
-        display: none;
-    }
-
-    .prompt-buttons {
-        justify-content: center;
-    }
-
-    .prompt-container {
-        max-width: 400px;
-        width: 100%;
-    }
-
-    .prompt-box {
-        width: 80%;
-    }
-}
-
-
-/* Loading ring animation */
-.loader {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: inline-block;
-    border-top: 2px solid #FFF;
-    border-right: 2px solid transparent;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }
