@@ -104,14 +104,14 @@ const Home = () => {
           </div>
 
           <div className=''>
-            <Link href="accounts.opener.chat/sign-in" >
+            <a href="accounts.opener.chat/sign-in" >
               <img
                 className="relative top-64 m-auto h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:h-[7em] lg:w-[24em] lg:h-[6em] lg:top-72 lg:left-[30%]"
                 alt="sum"
                 src="getStartedButton.png"
 
               />
-            </Link>
+            </a>
 
           </div>
 
