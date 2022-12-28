@@ -4,7 +4,7 @@ export default function SignInPage() {
     return <SignIn path="/sign-in" routing="path"
         appearance={{
             elements: {
-                rootBox: 'relative mx-auto top-[10em] my-auto'
+                rootBox: 'relative mx-auto top-[1em] md:top-[10em] my-auto'
             },
             layout: {
                 socialButtonsPlacement: 'bottom'
