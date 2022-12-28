@@ -164,23 +164,23 @@ const Home = () => {
               <a className='' id="retryButton" onClick={onRetryClicked}>
 
                 <div className="text-white " id="retryText">
-                  <img src="genButton.png" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
+                  <img src="genButtonNoText.png" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
                   <p className="absolute right-0 bottom-0 mb-6 mr-8 md:mb-9 md:mr-12 text-2xl">Try Again</p>
                 </div>
 
               </a>
             </div>
 
-            <a href="https://www.facebook.com/profile.php?id=100088076846318" target="_blank">
+            <a href="https://badoo.com/" target="_blank">
               <img className="absolute bottom-6 left-[1rem] h-7 w-9 sm:left-5 sm:w-10 sm:h-8" alt="fb" src="badoo.png" />
             </a>
-            <a href="https://twitter.com/Opener_app" target="_blank">
+            <a href="https://bumble.com/" target="_blank">
               <img className="absolute bottom-0 left-[2.5rem] h-8 w-10 sm:left-[3.1rem] sm:w-11 sm:h-9 mb-[1.15rem] " alt="" src="bumble.png" />
             </a>
-            <a href="https://www.instagram.com/opener_app/" target="_blank">
+            <a href="https://tinder.com/" target="_blank">
               <img className="absolute bottom-0 left-[4.8rem] mb-[1.27rem] h-7 w-8 sm:left-[5.8rem] sm:w-9 sm:h-8 sm:mb-[1.4rem] " alt="" src="tinder.png" />
             </a>
-            <a href="https://www.instagram.com/opener_app/" target="_blank">
+            <a onClick={() => navigator.clipboard.writeText({ apiOutput })} target="_blank">
               <img className="absolute bottom-0 left-[6.4rem] h-8 w-12 sm:left-[7.8rem] sm:w-14 sm:h-10 mb-[1.15rem] " alt="" src="copy.png" />
             </a>
 
