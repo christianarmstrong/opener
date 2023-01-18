@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { RedirectToSignUp, SignedIn, SignedOut, UserButton, useAuth, useUser, UserProfile } from '@clerk/nextjs';
 import { Dialog } from '@headlessui/react'
 import { Navbar } from '../components/Navbar';
-import { FiveOpenersFreePopup } from '../components/FiveOpenersFreePopup';
+
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { createClient } from "@supabase/supabase-js";
