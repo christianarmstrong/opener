@@ -1,15 +1,4 @@
 import Head from 'next/head';
-<<<<<<< Updated upstream
-
-
-//import Image from 'next/image';
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { RedirectToSignUp, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import { Navbar } from '../components/Navbar';
-=======
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -36,15 +25,10 @@ const supabaseClient = async (supabaseAccessToken) => {
 };
 
 
->>>>>>> Stashed changes
 const Home = () => {
   const [age_userInput, age_setUserInput] = useState('');
   const [name_userInput, name_setUserInput] = useState('');
   const [userInput, setUserInput] = useState('');
-<<<<<<< Updated upstream
-  const [apiOutput, setApiOutput] = useState('')
-  const [isGenerating, setIsGenerating] = useState(false)
-=======
   const [apiOutput, setApiOutput] = useState('');
   let [isOpen, setIsOpen] = useState(false);
   let dialogFocus = useRef(null);
@@ -77,7 +61,6 @@ const Home = () => {
     }
   }, []);
 
->>>>>>> Stashed changes
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
 
@@ -160,8 +143,8 @@ const Home = () => {
           </picture>
 
           <h1 className="relative leading-[4rem] mt-[-.5em] md:mt-[1] lg:mt-6 min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
-            <p className="">Break the Ice</p>
-            <p className=" lg:pl-56" > Instantly</p>
+            <p className="">Instant</p>
+            <p className=" lg:pl-56" > Icebreaker</p>
           </h1>
 
           <div className="relative text-white text-[1.7em] mx-12 top-56 leading-7  font-light text-center sm:mx-40 sm:text-[2.2em] sm:leading-8 lg:text-left manrope text-opacity-80 lg:w-[18em] lg:leading-10 lg:ml-[20%]">
@@ -206,8 +189,6 @@ const Home = () => {
           <img src="background.png" className="backgroundImage" />
         </picture>
 
-<<<<<<< Updated upstream
-=======
         <Dialog autoFocus={false} className="relative z-10" open={isOpen} onClose={() => setIsOpen(false)}>
 
           <div className="fixed inset-0 overflow-y-auto bg-black/50">
@@ -290,7 +271,6 @@ const Home = () => {
           </div>
         </Dialog>
 
->>>>>>> Stashed changes
 
         <div className="container ">
 
@@ -407,10 +387,7 @@ const Home = () => {
             <div className=" w-screen h-screen" id="enterGenerateButton">
               <a
                 className=' text-white shadow-black/25'
-<<<<<<< Updated upstream
-=======
                 //onClick={() => { setIsOpen(true); fetchCurrentOpeners(); }}
->>>>>>> Stashed changes
                 onClick={callGenerateEndpoint}
               >
                 <img src="genButton.png" className="h-22 w-48 lg:h-24 lg:w-60 mt-8 mx-auto " />
