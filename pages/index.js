@@ -143,7 +143,7 @@ const Home = () => {
           </picture>
 
           <h1 className="relative leading-[4rem] mt-[-.5em] md:mt-[1] lg:mt-6 min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
-            <p className="">Instant</p>
+            <p className="">The Instant</p>
             <p className=" lg:pl-56" > Icebreaker</p>
           </h1>
 
