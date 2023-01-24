@@ -149,7 +149,7 @@ const Home = () => {
           </div>
 
           <div className=''>
-            <a href="https://accounts.opener.chat/sign-up" >
+            <a href="/sign-up" >
               <img
                 className="relative top-64 m-auto h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:h-[7em] lg:w-[24em] lg:h-[6em] lg:top-72 lg:left-[30%]"
                 alt="sum"
@@ -330,7 +330,7 @@ const Home = () => {
 
 
               <div className="lg:relative lg:flex-auto  lg:mt-5 lg:w-auto" id="bioGroup">
-                <div className="text-white mb-4 lg:text-center lg:text-[2.5rem] lg:ml-[0] ml-[9%] sm:ml-[13%] md:ml-[17%] text-2xl  mt-[-10%] lg:mt-5  " id="enterDescriptionText">
+                <div className="text-white mb-4 lg:text-center lg:text-[2.5rem] lg:ml-[0] ml-[9%] sm:ml-[13%] md:ml-[17%] text-2xl mt-5 lg:mt-5  " id="enterDescriptionText">
                   <h2>What's their bio?</h2>
                 </div>
 
@@ -361,6 +361,7 @@ const Home = () => {
 
 
           </div>
+          <a href="https://www.producthunt.com/products/opener-2/reviews?utm_source=badge-product_review&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=514761&theme=light" alt="Opener - The&#0032;Best&#0032;Way&#0032;to&#0032;Start&#0032;a&#0032;Conversation | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
           <div className="invisible lg:visible">
             <div className="fixed left-4 bottom-4 text-white text-lg text-opacity-75">Made with 🧡 by Cheyenna & Christian Armstrong. Check our <a className="underline underline-offset-2" href="https://www.termsofusegenerator.net/live.php?token=JxycYwSYZJzn3E5cDHs0SZh9RAEWWtXb">terms of use.</a> </div>
             <div className="fixed right-32 bottom-3 text-white text-lg text-opacity-75 "> <a href={`mailto:customerSupport@opener.chat?subject=Inquiry&body=Hi, I have a question about your product.`}>Customersupport@opener.chat</a></div>
