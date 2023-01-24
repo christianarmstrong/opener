@@ -35,28 +35,4 @@ export default async function handler(req, res) {
     return null;
 }
 
-/*
 
-
-export const updateUser = ({ user_id, user_email }) => {
-    const [error, setError] = useState(null);
-    const { getToken } = useAuth();
-
-    useEffect(() => {
-        const fetchCurrentOpeners = async () => {
-            try {
-                await supabase.from('users').upsert({ id: user_id, email: user_email });
-
-            } catch (error) {
-                setError(error);
-            }
-        };
-        fetchCurrentOpeners();
-    }, [user_id, user_email]);
-
-    if (error) {
-        console.log('error');
-        return null;
-    }
-    return null;
-}; */

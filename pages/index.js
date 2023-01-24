@@ -338,7 +338,7 @@ const Home = () => {
                   <textarea
                     className="relative  lg:mt-3 placeholder:text-xs text-xs text-white mb-5 ml-[7%]  h-[8rem] bg-gradient-to-br from-[#dc6945] to-[#ca593c] border-[1.75px]
                           border-[#DA9C93] rounded-[30px] shadow-black/25 shadow-md  
-                          text-[1em] p-3 pt-4  xl:placeholder:text-xl  xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40 batangas left-[1%] w-[80%] sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] lg:h-[12rem] max xl:w-[600px] 2xl:w-[800px] "
+                          text-[1em] p-3 pt-4   xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40 batangas left-[1%] w-[80%] sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] lg:h-[12rem] max xl:w-[600px] 2xl:w-[800px] "
                     placeholder="Hint: Copy + Paste their bio here "
                     value={userInput}
                     onChange={onUserChangedText}
