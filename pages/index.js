@@ -144,7 +144,7 @@ const Home = () => {
           </h1>
 
           <div className="relative text-white text-[1.7em] mx-12 top-56 leading-7  font-light text-center sm:mx-40 sm:text-[2.2em] sm:leading-8 lg:text-left manrope text-opacity-80 lg:w-[18em] lg:leading-10 lg:ml-[20%]">
-            From dating apps to DM’s. Paste their bio and get a personalized - proven to work opening line.
+            From dating apps to DM’s. Type in their name - age and bio and get a personalized - proven to work opening line.
           </div>
 
           <div className=''>
