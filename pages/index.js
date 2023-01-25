@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { RedirectToSignUp, SignedIn, SignedOut, UserButton, useAuth, useUser, UserProfile } from '@clerk/nextjs';
 import { Dialog } from '@headlessui/react'
 import { Navbar } from '../components/Navbar';
-
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { createClient } from "@supabase/supabase-js";
@@ -183,7 +182,7 @@ const Home = () => {
         <picture>
           <source media="(max-width: 600px)" srcSet="phoneBackground.png" />
           <source media="(max-width: 990px)" srcSet="phoneBackground.png" />
-          <img src="background.png" className="backgroundImage" />
+          <img src="background.png" className="backgroundImage" alt="background" />
         </picture>
 
         <Dialog autoFocus={false} className="relative z-10" open={isOpen} onClose={() => setIsOpen(false)}>
@@ -197,7 +196,7 @@ const Home = () => {
                 <Dialog.Title className="text-2xl text-center font-medium leading-8 text-white mb-2 ">Looks like you’re out of Openers. Choose your paid plan!</Dialog.Title>
                 <form className="flex" action="/api/checkout_sessions" method="POST">
                   <button className="mx-auto focus:outline-none" type="submit" role="link">
-                    <img src="chooseYourPlan.png" className="h-18 w-72 m-auto mt-4 mb-2" />
+                    <img src="chooseYourPlan.png" className="h-18 w-72 m-auto mt-4 mb-2" alt="Choose your plan" />
                   </button>
                 </form>
                 <Dialog.Description className="text-center text-2xl mb-5">
@@ -207,7 +206,7 @@ const Home = () => {
                   className=' text-white shadow-black/25'
                   href=""
                 >
-                  <img src="bigPopupLine.png" className="" />
+                  <img src="bigPopupLine.png" className="" alt="Big Line" />
                 </a>
                 <p className="text-2xl text-center mb-3 ">
                   Get 10 more Openers free by sharing us to any of these social apps or leaving a review!
@@ -217,7 +216,7 @@ const Home = () => {
                   href=""
 
                 >
-                  <img src="littlePopupLine.png" className="" />
+                  <img src="littlePopupLine.png" className="" alt="Little Line" />
                 </a>
                 <div className="mt-5 flex w-full h-full justify-evenly ">
                   <a
@@ -225,28 +224,28 @@ const Home = () => {
                     href=""
 
                   >
-                    <img src="facebookPopup.png" className="w-16 h-18" />
+                    <img src="facebookPopup.png" className="w-16 h-18" alt="Facebook" />
                   </a>
                   <a
                     className=' text-white shadow-black/25'
                     href=""
 
                   >
-                    <img src="instagramPopup.png" className="w-16 h-18" />
+                    <img src="instagramPopup.png" className="w-16 h-18" alt="Instagram" />
                   </a>
                   <a
                     className=' text-white shadow-black/25'
                     href=""
 
                   >
-                    <img src="twitterPopup.png" className="w-16 h-18" />
+                    <img src="twitterPopup.png" className="w-16 h-18" alt="Twitter" />
                   </a>
                   <a
                     className=' text-white shadow-black/25'
                     href=""
 
                   >
-                    <img src="linkedinPopup.png" className="w-16 h-18" />
+                    <img src="linkedinPopup.png" className="w-16 h-18" alt="LinkedIn" />
                   </a>
                 </div>
                 <a
@@ -254,7 +253,7 @@ const Home = () => {
                   href="https://www.producthunt.com/products/opener-2/reviews/new"
 
                 >
-                  <img src="reviewButtonPopup.png" className=" mt-5" />
+                  <img src="reviewButtonPopup.png" className=" mt-5" alt="Leave a Review" />
                 </a>
 
                 {/*
@@ -291,7 +290,7 @@ const Home = () => {
               <a className='right-0 bottom-0' id="retryButton" onClick={onRetryClicked}>
 
                 <div className="text-white " id="retryText">
-                  <img src="genButtonNoText.png" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
+                  <img src="genButtonNoText.png" alt="" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
                   <p className="absolute right-0 bottom-0 mb-6 mr-8 md:mb-9 md:mr-12 text-2xl">Try Again</p>
                 </div>
 
@@ -316,7 +315,7 @@ const Home = () => {
                           rounded-[40px] shadow-black/60 shadow-md p-3 pt-4  batangas invisible "
 
               value={apiOutput}
-
+              readOnly={true}
               id="outputBox"
 
             />
@@ -355,7 +354,7 @@ const Home = () => {
                 //onClick={() => { setIsOpen(true); fetchCurrentOpeners(); }}
                 onClick={callGenerateEndpoint}
               >
-                <img src="genButton.png" className="h-22 w-48 lg:h-24 lg:w-60 mt-8 mx-auto " />
+                <img src="genButton.png" className="h-22 w-48 lg:h-24 lg:w-60 mt-8 mx-auto " alt="Generate Opener" />
               </a>
             </div>
 
@@ -370,21 +369,21 @@ const Home = () => {
               href=""
 
             >
-              <img src="facebookColored.png" className="w-12 h-10 " />
+              <img src="facebookColored.png" className="w-12 h-10 " alt="Facebook" />
             </a>
             <a
               className=' fixed bottom-3 right-11 text-white shadow-black/25'
               href=""
 
             >
-              <img src="instagramColored.png" className="w-8 h-8 " />
+              <img src="instagramColored.png" className="w-8 h-8 " alt="Instagram" />
             </a>
             <a
               className='fixed bottom-3 right-20 text-white shadow-black/25'
               href=""
 
             >
-              <img src="twitterColored.png" className=" w-10 h-8" />
+              <img src="twitterColored.png" className=" w-10 h-8" alt="Twitter" />
             </a>
           </div>
         </div>
