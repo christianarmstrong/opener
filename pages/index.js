@@ -151,7 +151,7 @@ const Home = () => {
           </div>
 
           <div className=''>
-            <a href="/sign-up" >
+            <a href="https://accounts.opener.chat/sign-up" >
               <img
                 className="relative top-64 m-auto h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:h-[7em] lg:w-[24em] lg:h-[6em] lg:top-72 lg:left-[30%]"
                 alt="sum"
@@ -177,8 +177,8 @@ const Home = () => {
 
 
 
-        <a class="fixed mx-auto bottom-0 mb-[-2em] md:mb-[-1em] lg:mb-0 lg:left-0 lg:ml-20  " href="https://www.producthunt.com/posts/opener-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=371804&theme=light"
-          alt="" class="w-64 h-40 lg:w-80 lg:h-80" /></a>
+
+        <a className="fixed mx-auto bottom-0 mb-[-2em] md:mb-[-1em] lg:mb-0 lg:left-0 lg:ml-20  " href="https://www.producthunt.com/posts/opener-2?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=371804&theme=light&period=weekly&topic_id=268" class="w-64 h-40 lg:w-80 lg:h-80" /></a>
       </SignedOut >
 
       <SignedIn>
@@ -272,9 +272,6 @@ const Home = () => {
 
 
         <div className="container ">
-
-
-
           <div className="text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem] lg:mt-28 mt-20 md:mt-" id="openerHeadingBefore">
             <h1 className="">Opener</h1>
           </div>
@@ -284,8 +281,6 @@ const Home = () => {
               <h3>Your Opener</h3>
             </div>
           </div>
-
-
 
           <div className="relative invisible" id="outputBoxWhole">
 
@@ -330,37 +325,7 @@ const Home = () => {
 
             <div className="lg:flex lg:flex-wrap lg:w-screen lg:align-middle lg:justify-between content-center" id="nameGroup">
               <div className="lg:relative lg:flex-auto lg:basis-1/2 lg:mr-[-13%] lg:ml-[5%] lg:mt-3 ">
-                <div className="text-white text-left mb-4 lg:text-[2.5rem] lg:text-center  text-align ml-[9%] sm:ml-[13%] md:ml-[17%] lg:ml-[0] xl:ml-[17%] text-2xl" id="enterNameText">
-                  <h2>What's their name?</h2>
-                </div>
 
-                <textarea
-                  className="relative mt-1 lg:mt-3 lg:h-[5rem] xl:w-[50%] placeholder:text-xs  text-xs text-white mb-5 ml-[7%] w-[80%] h-[3rem]  bg-gradient-to-br from-[#dc6945] to-[#ca593c] bg-opacity-10 border-[1.75px] border-[#DA9C93]
-                            rounded-[30px] shadow-black/25 shadow-md  text-[1em] p-3 pt-4 xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40  batangas left-[1%] sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] xl:ml-[22%]  "
-                  placeholder="Enter their name"
-                  value={name_userInput}
-                  onChange={onUserChangedNameText}
-                  id="enterNameBox"
-
-                />
-              </div>
-
-              <div className="lg:relative lg:flex-auto lg:basis-1/2 lg:ml-[1%] lg:mt-3 " id="ageGroup">
-                <div className="text-white text-left mb-4 lg:text-[2.5rem] lg:text-center ml-[9%] sm:ml-[13%] md:ml-[17%] lg:ml-[-28%]  text-2xl" id="enterAgeText">
-                  <h2>How old are they?</h2>
-
-                </div>
-
-                <textarea
-                  className="relative mt-1 lg:mt-3  lg:h-[5rem] xl:w-[50%] placeholder:text-xs text-xs text-white mb-5 ml-[7%] w-[80%] h-[3rem] bg-gradient-to-br from-[#dc6945] to-[#ca593c] border-[1.75px]
-                            border-[#DA9C93] rounded-[30px] shadow-black/25 shadow-md 
-                              text-[1em] p-3 pt-4 batangas sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] left-[1%] lg:ml-[0] xl:placeholder:text-xl placeholder:text-white/40  xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 "
-                  placeholder="Enter their age"
-                  value={age_userInput}
-                  onChange={onUserChangedAgeText}
-                  id="enterAgeBox"
-
-                />
               </div>
 
               <div className="lg:relative lg:flex-auto  lg:mt-5 lg:w-auto" id="bioGroup">
@@ -395,7 +360,8 @@ const Home = () => {
 
 
           </div>
-          <a href="https://www.producthunt.com/posts/opener-2?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=371804&theme=light&period=weekly&topic_id=268" alt="Opener - The&#0032;best&#0032;way&#0032;to&#0032;start&#0032;a&#0032;conversation | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>          <div className="invisible lg:visible">
+
+          <div className="invisible lg:visible">
             <div className="fixed left-4 bottom-4 text-white text-lg text-opacity-75">Made with 🧡 by Cheyenna & Christian Armstrong. Check our <a className="underline underline-offset-2" href="https://www.termsofusegenerator.net/live.php?token=JxycYwSYZJzn3E5cDHs0SZh9RAEWWtXb">terms of use.</a> </div>
             <div className="fixed right-32 bottom-3 text-white text-lg text-opacity-75 "> <a href={`mailto:customerSupport@opener.chat?subject=Inquiry&body=Hi, I have a question about your product.`}>Customersupport@opener.chat</a></div>
             <a
