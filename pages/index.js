@@ -83,10 +83,7 @@ const Home = () => {
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
-    document.getElementById("enterNameText").style.display = "none";
-    document.getElementById("enterNameBox").style.display = "none";
-    document.getElementById("enterAgeText").style.display = "none";
-    document.getElementById("enterAgeBox").style.display = "none";
+
     document.getElementById("enterDescriptionText").style.display = "none";
     document.getElementById("enterDescriptionBox").style.display = "none";
     document.getElementById("enterGenerateButton").style.display = "none";
@@ -151,7 +148,7 @@ const Home = () => {
           </div>
 
           <div className=''>
-            <a href="https://accounts.opener.chat/sign-up" >
+            <a href="/sign-up" >
               <img
                 className="relative top-64 m-auto h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:h-[7em] lg:w-[24em] lg:h-[6em] lg:top-72 lg:left-[30%]"
                 alt="sum"
@@ -324,12 +321,10 @@ const Home = () => {
           <div className="fixed w-screen h-fit mr-24 left-[0%] top-[25%] sm:top-[27%]" id="prompts">
 
             <div className="lg:flex lg:flex-wrap lg:w-screen lg:align-middle lg:justify-between content-center" id="nameGroup">
-              <div className="lg:relative lg:flex-auto lg:basis-1/2 lg:mr-[-13%] lg:ml-[5%] lg:mt-3 ">
 
-              </div>
 
-              <div className="lg:relative lg:flex-auto  lg:mt-5 lg:w-auto" id="bioGroup">
-                <div className="text-white mb-4 lg:text-center lg:text-[2.5rem] lg:ml-[0] ml-[9%] sm:ml-[13%] md:ml-[17%] text-2xl mt-5 lg:mt-5  " id="enterDescriptionText">
+              <div className="relative flex-auto mt-5 lg:w-auto" id="bioGroup">
+                <div className="text-white mb-4 text-center text-[2.5rem] lg:ml-[0] ml-[0] text-2xl mt-5 lg:mt-5  " id="enterDescriptionText">
                   <h2>What's their bio?</h2>
                 </div>
 
@@ -337,7 +332,7 @@ const Home = () => {
                   <textarea
                     className="relative mt-1 lg:mt-3 placeholder:text-xs text-xs text-white mb-5 ml-[7%]  h-[8rem] bg-gradient-to-br from-[#dc6945] to-[#ca593c] border-[1.75px]
                           border-[#DA9C93] rounded-[30px] shadow-black/25 shadow-md  
-                          text-[1em] p-3 pt-4   xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40 batangas left-[1%] w-[80%] sm:left-[6%] sm:w-[73%] md:left-[10%] md:w-[67%] lg:h-[12rem] max xl:w-[600px] 2xl:w-[800px] "
+                          text-[1em] p-3 pt-4   xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40 batangas left-[3%] w-[80%] sm:left-[6%] sm:w-[73%] md:w-[67%] md:left-[9%] lg:left-[10%] lg:h-[12rem] max xl:w-[600px] 2xl:w-[800px] "
                     placeholder="Hint: Copy + Paste their bio here "
                     value={userInput}
                     onChange={onUserChangedText}
