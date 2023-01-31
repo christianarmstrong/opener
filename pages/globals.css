@@ -33,14 +33,10 @@ body {
 }
 
 .root {
-    display: flex;
-    place-content: center flex-start;
-    align-items: center;
-    flex-flow: column nowrap;
-    height: 100vh;
+
     overflow: auto;
-    padding: 0px;
-    position: relative;
+
+
 }
 
 .container {
@@ -66,14 +62,7 @@ body {
     color: #FFF
 }
 
-.backgroundImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
+
 
 .header-title {
     display: flex;

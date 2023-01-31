@@ -3,10 +3,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 export const Navbar = () => {
+    const [navbar, setNavbar] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+
+    const changeBackground = () => {
+        if (window.scrollY >= 80) {
+            setNavbar(true);
+        } else {
+            setNavbar(false);
+        }
+    };
+    window.addEventListener('scroll', changeBackground);
     return (
         <>
-            <nav className='flex w-screen fixed z-50 '>
+            <nav className={navbar ? "flex w-screen z-50 bg-red-400" : 'flex w-screen fixed z-50 '} >
                 <Link href='/' className='inline-flex'>
                     <img
                         className="w-30 h-14 md:w-42 md:h-42 relative my-4 ml-2"
@@ -57,7 +67,7 @@ export const Navbar = () => {
                     */ }
                 </SignedIn>
                 <SignedOut>
-                    <div class="visible">
+                    <div className="visible">
                         <Link href="/sign-up" >
                             <img
                                 className="fixed right-0 mr-2.5"

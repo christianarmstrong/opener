@@ -9,6 +9,7 @@ import { Navbar } from '../components/Navbar';
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { createClient } from "@supabase/supabase-js";
+import ReactPlayer from 'react-player'
 
 
 const supabaseClient = async (supabaseAccessToken) => {
@@ -116,13 +117,24 @@ const Home = () => {
     window.location.href = window.location.href
   }
 
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener('scroll', changeBackground);
+
 
 
 
   return (
 
 
-    <div className="root">
+    <div className="w-fit h-fit overflow-auto max-w-[100%] max-h-[100%] bg-[#E46539]">
 
       <Head>
         <title>Opener</title>
@@ -130,27 +142,47 @@ const Home = () => {
       </Head>
 
       <SignedOut>
-        <div className="" id="landingPageContainer">
+        <picture>
+          <source media="(max-width: 600px)" className="" srcSet="frontPagePhone.png" />
+          <source media="(max-width: 1800px)" srcSet="openerHomeBackground.png" />
+          <source media="(max-width: 400px)" srcSet="frontPagePhone.png" />
+          <img src="openerDesktopBackground.png" className="absolute left-0 right-0  " />
+        </picture>
+        <div className="w-fit h-fit" id="landingPageContainer">
 
-          <picture>
-            <source media="(max-width: 600px)" srcSet="phoneBackground.png" />
-            <source media="(max-width: 990px)" srcSet="phoneBackground.png" />
-            <img src="background.png" className="backgroundImage" />
-          </picture>
 
-          <h1 className="relative leading-[4rem] mt-[-.5em] md:mt-[1] lg:mt-6 min-[484px]:text-[5em] min-[484px]:leading-[.9em] text-white text-[4em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left lg:left-[.1em]" id="openerTitle" >
+
+          {/* Social Media Links. Hides on md and small screens*/}
+
+          <a href="https://www.facebook.com/profile.php?id=100088076846318" target="_blank">
+            <img className="absolute right-0 w-16 h-12 invisible top-[37%] mr-5   lg:visible" alt="fb" src="facebook.png" />
+          </a>
+
+          <a href="https://twitter.com/Opener_app" target="_blank">
+            <img className="absolute right-0 w-16 h-12 invisible  top-[25%] mr-5  lg:visible" alt="" src="twitter.png" />
+          </a>
+
+          <a href="https://www.instagram.com/opener_app/" target="_blank">
+            <img className="absolute right-0  w-16 h-12 invisible top-[31%] mr-5  lg:visible" alt="" src="instagram.png" />
+          </a>
+
+          <h1 className="relative leading-[4rem] lg:ml-[15rem] xl:ml-[20rem] 2xl:ml-[25rem] min-[1700px]:ml-[30rem] mt-[-.5em] md:mt-[1] lg:mt-6 min-[484px]:text-[5em] min-[484px]:leading-[.9em]
+                       text-white text-[4.5em] sm:leading-[1em] sm:text-[5.5em] md:text-[6em] top-44 text-center lg:text-left 
+                         " id="openerTitle" >
             <p className="">The Instant</p>
             <p className=" lg:pl-56" > Icebreaker</p>
           </h1>
 
-          <div className="relative text-white text-[1.7em] mx-12 top-56 leading-7  font-light text-center sm:mx-40 sm:text-[2.2em] sm:leading-8 lg:text-left manrope text-opacity-80 lg:w-[18em] lg:leading-10 lg:ml-[20%]">
-            From dating apps to DM’s. Type in their name - age and bio and get a personalized - proven to work opening line.
+          <div className="relative text-white text-[1.6em] top-48 leading-10 mx-auto   w-3/4 sm:w-1/2 md:top-56 md:leading-[2.6rem]
+                          font-light text-center sm:text-[2.2em] sm:leading-8 lg:text-left 
+                           manrope text-opacity-80 lg:w-[18em]  lg:leading-[2.6rem] lg:ml-[35%]">
+            From dating apps to DM’s. Type in their bio and get a personalized - proven to work opening line.
           </div>
 
           <div className=''>
             <a href="https://accounts.opener.chat/sign-up" >
               <img
-                className="relative top-64 m-auto h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:h-[7em] lg:w-[24em] lg:h-[6em] lg:top-72 lg:left-[30%]"
+                className="relative top-56 mx-auto lg:ml-[60%] xl:ml-[58%] 2xl:ml-[56%] min-[1700px]:ml-[51%] h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:top-72 md:h-[7em] lg:w-[20em] lg:h-[5em]  lg:top-[14rem] "
                 alt="sum"
                 src="getStartedButton.png"
 
@@ -159,23 +191,85 @@ const Home = () => {
 
           </div>
 
-          {/* Social Media Links. Hides on md and small screens*/}
+          <a className="relative top-52 lg:w-80 lg:h-80  invisible lg:visible  md:mb-[-1em] lg:ml-20  " href="https://www.producthunt.com/posts/opener-2?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-opener&#0045;2"
+            target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=371804&theme=light&period=weekly&topic_id=268" className="w-64 h-40 lg:w-80 lg:h-80 top-52 lg:ml-20" /></a>
 
-          <a href="https://www.facebook.com/profile.php?id=100088076846318" target="_blank">
-            <img className="fixed right-0 w-16 h-12 invisible top-[37%] mr-5   lg:visible" alt="fb" src="facebook.png" />
-          </a>
-          <a href="https://twitter.com/Opener_app" target="_blank">
-            <img className="fixed right-0 w-16 h-12 invisible  top-[25%] mr-5  lg:visible" alt="" src="twitter.png" />
-          </a>
-          <a href="https://www.instagram.com/opener_app/" target="_blank">
-            <img className="fixed right-0  w-16 h-12 invisible top-[31%] mr-5  lg:visible" alt="" src="instagram.png" />
-          </a>
+          <img className="relative w-[15rem] h-[7.5rem] ml-[45%] lg:ml-[75%] top-28 sm:top-28 md:top-40 lg:top-1 md:w-[20rem]  md:h-[10rem] xl:w-90 xl:h-30 " src="arrow.png" />
+          <h3 className="relative bottom-4 text-center right-0 top-10 sm:top-10 left-[-3rem] md:left-[-4.5rem] md:top-20 lg:top-[-5rem] ml-[2%] lg:ml-[60%] text-white text-4xl md:text-5xl lg:text-5xl ">Learn More</h3>
+          <div className="">
+
+
+            <img
+              className="relative mx-auto top-[10rem] md:top-[22rem] lg:top-[14rem] "
+              alt="Animated people hugging"
+              src="openerHuggingPicture.png"
+            />
+
+            <h2 className="relative text-5xl top-[10rem] md:top-[22rem]  lg:top-[14rem] text-center text-white lg:text-6xl">
+              What Do We Do?
+            </h2>
+
+            <p className="relative lg:top-[14rem] w-3/4 top-[10rem] md:top-[22rem] lg:w-7/12 mt-5 mx-auto text-center manrope text-white text-xl">
+              At Opener, we want everybody to have an equal opportunity to start a conversation with someone they're interested in. That's why we are working to make it as easy as possible.
+            </p>
+
+            <div className="relative top-[12rem] md:top-[22rem] lg:top-[17rem] lg:flex lg:justify-items-center ">
+              <div className=" lg:basis-1/6 " />
+              <div className=" lg:basis-2/6 ">
+                <h3 className=" text-white text-center  text-5xl">
+                  Enter their Bio
+                </h3>
+
+                <p className=" text-white text-center  mt-5 w-3/4 lg:w-4/5  manrope mx-auto text-xl">
+                  We take your person of interests bio and create the perfect opening line. Whether you need an opening line for a first DM or a conversation with a stranger on a dating app, Opener has got you covered.
+                </p>
+
+              </div>
+
+              <div className="lg:basis-2/6">
+                <h3 className=" text-white mt-3 lg:mt-0 text-center  text-5xl">
+                  Get an Opener
+                </h3>
+
+                <p className=" text-white text-center mt-5 w-3/4 lg:w-4/5 manrope mx-auto  text-xl">
+                  We make it easy to get started – just set up your profile and let us do the rest. So what are you waiting for? Give Opener a try today and see how easy it can be to start a conversation
+                </p>
+              </div>
+              <div className=" lg:basis-1/6 " />
+
+            </div>
+
+
+            <h3 className="relative top-[18rem] md:top-[26rem] text-6xl lg:top-[20rem] xl:top-[24rem] text-white mx-auto text-center lg:text-9xl">
+              It’s that Easy
+            </h3>
+
+            <video className="relative w-[20rem] h-[10rem] sm:w-[30rem] sm:h-[15rem] md:w-[40rem] md:h-[20rem] lg:w-[60rem] lg:h-[30rem] xl:w-[70rem] xl:h-[35rem] mx-auto  top-[22rem] md:top-[28rem] lg:top-[27rem]" muted autoPlay loop controls >
+              <source className="" src="openerDesktopDemo.mp4" type="video/mp4" />
+
+            </video>
+
+          </div>
+          <div className=''>
+            <a href="https://accounts.opener.chat/sign-up" >
+              <img
+                className="relative mt-[25rem] md:mt-[30rem] m-auto h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:h-[7em] lg:w-[28em] lg:h-[7em] mb-10"
+                alt="sum"
+                src="getStartedButton.png"
+
+              />
+            </a>
+
+          </div>
+
+
+
+
+
         </div>
 
 
 
-
-        <a className="fixed mx-auto bottom-0 mb-[-2em] md:mb-[-1em] lg:mb-0 lg:left-0 lg:ml-20  " href="https://www.producthunt.com/posts/opener-2?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-opener&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=371804&theme=light&period=weekly&topic_id=268" class="w-64 h-40 lg:w-80 lg:h-80" /></a>
       </SignedOut >
 
       <SignedIn>
