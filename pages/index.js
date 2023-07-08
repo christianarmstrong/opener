@@ -117,16 +117,9 @@ const Home = () => {
     window.location.href = window.location.href
   }
 
-  const [navbar, setNavbar] = useState(false);
 
-  const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-  window.addEventListener('scroll', changeBackground);
+
+
 
 
 
@@ -138,7 +131,6 @@ const Home = () => {
 
       <Head>
         <title>Opener</title>
-
       </Head>
 
       <SignedOut>
@@ -272,11 +264,11 @@ const Home = () => {
 
       </SignedOut >
 
-      <SignedIn>
+      <SignedIn >
         <picture>
           <source media="(max-width: 600px)" srcSet="phoneBackground.png" />
           <source media="(max-width: 990px)" srcSet="phoneBackground.png" />
-          <img src="background.png" className="backgroundImage" alt="background" />
+          <img src="background.png" className="w-screen h-screen object-cover" alt="background" />
         </picture>
 
         <Dialog autoFocus={false} className="relative z-10" open={isOpen} onClose={() => setIsOpen(false)}>
@@ -362,18 +354,18 @@ const Home = () => {
         </Dialog>
 
 
-        <div className="container ">
-          <div className="text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem] lg:mt-28 mt-20 md:mt-" id="openerHeadingBefore">
+        <div className="fixed">
+          <div className="fixed left-[25%] top-[15%] sm:left-[35%] sm:top-[10%] md:left-[38%] md:top-[10%] lg:left-[36%] lg:top-[10%] xl:left-[41%] xl:top-[10%] text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
             <h1 className="">Opener</h1>
           </div>
 
           <div className="output-header-container  invisible" id="openerHeading">
-            <div className="text-white text-[3.5em] sm:text-[5em] md:text-[5em] lg:text-[6em] xl:text-[7em] mt-24" >
+            <div className="fixed top-[20%] left-[13%] sm:top-[15%] sm:left-[20%] md:top-[15%] md:left-[20%] lg:top-[15%] lg:left-[25%] xl:top-[15%] xl:left-[32%] text-white text-[3.5em] sm:text-[5em] md:text-[5em] lg:text-[6em] xl:text-[7em]" >
               <h3>Your Opener</h3>
             </div>
           </div>
 
-          <div className="relative invisible" id="outputBoxWhole">
+          <div className="fixed top-[35%] left-[13%] sm:top-[40%] sm:left-[18%] md:top-[40%] md:left-[15%] lg:top-[40%] lg:left-[20%] xl:top-[40%] xl:left-[27.5%] invisible" id="outputBoxWhole">
 
             <div className="" id="Try Again" >
               <a className='right-0 bottom-0' id="retryButton" onClick={onRetryClicked}>
