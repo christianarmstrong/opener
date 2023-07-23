@@ -355,7 +355,7 @@ const Home = () => {
 
 
 
-        <div className="fixed top-[14%] sm:top-[15%] md:top-[15%] left-1/2 transform -translate-x-1/2 text-white text-[5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
+        <div className="fixed top-[10%] sm:top-[15%] md:top-[15%] left-1/2 transform -translate-x-1/2 text-white text-[5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
           <h1 className="">Opener</h1>
         </div>
 
