@@ -355,7 +355,7 @@ const Home = () => {
 
 
 
-        <div className="fixed top-[10%] left-1/2 transform -translate-x-1/2 text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
+        <div className="fixed top-[18%] sm:top-[15%] md:top-[15%] left-1/2 transform -translate-x-1/2 text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
           <h1 className="">Opener</h1>
         </div>
 
@@ -409,7 +409,7 @@ const Home = () => {
           <div className="lg:flex lg:flex-wrap lg:w-screen lg:align-middle lg:justify-between content-center" id="nameGroup">
 
 
-            <div className="relative flex-auto mt-5 lg:w-auto" id="bioGroup">
+            <div className="relative flex-auto mt-12 lg:w-auto" id="bioGroup">
               <div className="text-white mb-4 text-center text-[2.5rem] lg:ml-[0] ml-[0] text-2xl mt-5 lg:mt-5  " id="enterDescriptionText">
                 <h2>What's their bio?</h2>
               </div>
