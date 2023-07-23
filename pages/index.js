@@ -354,119 +354,118 @@ const Home = () => {
         </Dialog>
 
 
-        <div className="fixed">
-          <div className="fixed left-[25%] top-[15%] sm:left-[35%] sm:top-[10%] md:left-[38%] md:top-[10%] lg:left-[36%] lg:top-[10%] xl:left-[41%] xl:top-[10%] text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
-            <h1 className="">Opener</h1>
+
+        <div className="fixed top-[10%] left-1/2 transform -translate-x-1/2 text-white text-[3.5rem] sm:text-[4.5em] md:text-[5rem] lg:text-[6rem]" id="openerHeadingBefore">
+          <h1 className="">Opener</h1>
+        </div>
+
+        <div className="output-header-container  invisible" id="openerHeading">
+          <div className="fixed top-[15%] text-center sm:text-left leading-tight sm:top-[22%] md:top-[20%] lg:top-[15%] left-1/2 transform -translate-x-1/2 text-white text-[4em] sm:text-[3.5em] md:text-[4.2em] lg:text-[5.6em] xl:text-[7em]" >
+            <h3>Your Opener</h3>
+          </div>
+        </div>
+
+        <div className="fixed top-[35%] sm:top-[32%] md:top-[32%] left-1/2 transform -translate-x-1/2 invisible" id="outputBoxWhole">
+
+          <div className="" id="Try Again" >
+            <a className='right-0 bottom-0' id="retryButton" onClick={onRetryClicked}>
+
+              <div className="text-white " id="retryText">
+                <img src="genButtonNoText.png" alt="" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
+                <p className="absolute right-0 bottom-0 mb-6 mr-8 md:mb-9 md:mr-12 text-2xl">Try Again</p>
+              </div>
+
+            </a>
           </div>
 
-          <div className="output-header-container  invisible" id="openerHeading">
-            <div className="fixed top-[20%] left-[13%] sm:top-[15%] sm:left-[20%] md:top-[15%] md:left-[20%] lg:top-[15%] lg:left-[25%] xl:top-[15%] xl:left-[32%] text-white text-[3.5em] sm:text-[5em] md:text-[5em] lg:text-[6em] xl:text-[7em]" >
-              <h3>Your Opener</h3>
-            </div>
-          </div>
+          <a href="https://badoo.com/" target="_blank">
+            <img className="absolute bottom-6 left-[1rem] h-7 w-9 sm:left-5 sm:w-10 sm:h-8" alt="fb" src="badoo.png" />
+          </a>
+          <a href="https://bumble.com/" target="_blank">
+            <img className="absolute bottom-0 left-[2.5rem] h-8 w-10 sm:left-[3.1rem] sm:w-11 sm:h-9 mb-[1.15rem] " alt="" src="bumble.png" />
+          </a>
+          <a href="https://tinder.com/" target="_blank">
+            <img className="absolute bottom-0 left-[4.8rem] mb-[1.27rem] h-7 w-8 sm:left-[5.8rem] sm:w-9 sm:h-8 sm:mb-[1.4rem] " alt="" src="tinder.png" />
+          </a>
+          <a onClick={() => navigator.clipboard.writeText(apiOutput)} target="_blank">
+            <img className="absolute bottom-0 left-[6.4rem] h-8 w-12 sm:left-[7.8rem] sm:w-14 sm:h-10 mb-[1.15rem] " alt="" src="copy.png" />
+          </a>
 
-          <div className="fixed top-[35%] left-[13%] sm:top-[40%] sm:left-[18%] md:top-[40%] md:left-[15%] lg:top-[40%] lg:left-[20%] xl:top-[40%] xl:left-[27.5%] invisible" id="outputBoxWhole">
+          <textarea
+            className=" h-[14em] indent-4 sm:h-[8em] md:h-[10em] lg:h-[12em] text-white/90  text-3xl w-[10em] min-[480px]:w-[10em]  sm:w-[16em] md:w-[20em] lg:w-[24em] xl:w-[28em] bg-gradient-to-br from-[#dc6945] to-[#b94834] bg-opacity- border-[1.75px] border-[#DA9C93]
+                        rounded-[40px] shadow-black/60 shadow-md p-3 pt-4  batangas invisible "
 
-            <div className="" id="Try Again" >
-              <a className='right-0 bottom-0' id="retryButton" onClick={onRetryClicked}>
+            value={apiOutput}
+            readOnly={true}
+            id="outputBox"
 
-                <div className="text-white " id="retryText">
-                  <img src="genButtonNoText.png" alt="" className="h-10 w-32 md:h-16 md:w-40 mx-auto absolute right-0 bottom-0 mb-5 mr-5" />
-                  <p className="absolute right-0 bottom-0 mb-6 mr-8 md:mb-9 md:mr-12 text-2xl">Try Again</p>
-                </div>
-
-              </a>
-            </div>
-
-            <a href="https://badoo.com/" target="_blank">
-              <img className="absolute bottom-6 left-[1rem] h-7 w-9 sm:left-5 sm:w-10 sm:h-8" alt="fb" src="badoo.png" />
-            </a>
-            <a href="https://bumble.com/" target="_blank">
-              <img className="absolute bottom-0 left-[2.5rem] h-8 w-10 sm:left-[3.1rem] sm:w-11 sm:h-9 mb-[1.15rem] " alt="" src="bumble.png" />
-            </a>
-            <a href="https://tinder.com/" target="_blank">
-              <img className="absolute bottom-0 left-[4.8rem] mb-[1.27rem] h-7 w-8 sm:left-[5.8rem] sm:w-9 sm:h-8 sm:mb-[1.4rem] " alt="" src="tinder.png" />
-            </a>
-            <a onClick={() => navigator.clipboard.writeText(apiOutput)} target="_blank">
-              <img className="absolute bottom-0 left-[6.4rem] h-8 w-12 sm:left-[7.8rem] sm:w-14 sm:h-10 mb-[1.15rem] " alt="" src="copy.png" />
-            </a>
-
-            <textarea
-              className=" h-[14em] indent-4 sm:h-[8em] md:h-[10em] lg:h-[12em] text-white/90  text-3xl w-[10em] min-[480px]:w-[10em]  sm:w-[16em] md:w-[20em] lg:w-[24em] xl:w-[28em] bg-gradient-to-br from-[#dc6945] to-[#b94834] bg-opacity- border-[1.75px] border-[#DA9C93]
-                          rounded-[40px] shadow-black/60 shadow-md p-3 pt-4  batangas invisible "
-
-              value={apiOutput}
-              readOnly={true}
-              id="outputBox"
-
-            />
+          />
 
 
-          </div>
+        </div>
 
-          <div className="fixed w-screen h-fit mr-24 left-[0%] top-[25%] sm:top-[27%]" id="prompts">
+        <div className="fixed w-screen h-fit mr-24 left-[0%] top-[25%] sm:top-[27%]" id="prompts">
 
-            <div className="lg:flex lg:flex-wrap lg:w-screen lg:align-middle lg:justify-between content-center" id="nameGroup">
+          <div className="lg:flex lg:flex-wrap lg:w-screen lg:align-middle lg:justify-between content-center" id="nameGroup">
 
 
-              <div className="relative flex-auto mt-5 lg:w-auto" id="bioGroup">
-                <div className="text-white mb-4 text-center text-[2.5rem] lg:ml-[0] ml-[0] text-2xl mt-5 lg:mt-5  " id="enterDescriptionText">
-                  <h2>What's their bio?</h2>
-                </div>
+            <div className="relative flex-auto mt-5 lg:w-auto" id="bioGroup">
+              <div className="text-white mb-4 text-center text-[2.5rem] lg:ml-[0] ml-[0] text-2xl mt-5 lg:mt-5  " id="enterDescriptionText">
+                <h2>What's their bio?</h2>
+              </div>
 
-                <div className="xl:flex xl:justify-center xl:ml-0 xl:mr-[22%]">
-                  <textarea
-                    className="relative mt-1 lg:mt-3 placeholder:text-xs text-xs text-white mb-5 ml-[7%]  h-[8rem] bg-gradient-to-br from-[#dc6945] to-[#ca593c] border-[1.75px]
-                          border-[#DA9C93] rounded-[30px] shadow-black/25 shadow-md  
-                          text-[1em] p-3 pt-4   xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40 batangas left-[3%] w-[80%] sm:left-[6%] sm:w-[73%] md:w-[67%] md:left-[9%] lg:left-[10%] lg:h-[12rem] max xl:w-[600px] 2xl:w-[800px] "
-                    placeholder="Hint: Copy + Paste their bio here "
-                    value={userInput}
-                    onChange={onUserChangedText}
-                    id="enterDescriptionBox"
-                  />
-                </div>
+              <div className="xl:flex xl:justify-center xl:ml-0 xl:mr-[22%]">
+                <textarea
+                  className="relative mt-1 lg:mt-3 placeholder:text-xs text-xs text-white mb-5 ml-[7%]  h-[8rem] bg-gradient-to-br from-[#dc6945] to-[#ca593c] border-[1.75px]
+                        border-[#DA9C93] rounded-[30px] shadow-black/25 shadow-md  
+                        text-[1em] p-3 pt-4   xl:placeholder:text-xl xl:placeholder:pl-4 xl:placeholder:pt-2.5 placeholder:text-white/40 batangas left-[3%] w-[80%] sm:left-[6%] sm:w-[73%] md:w-[67%] md:left-[9%] lg:left-[10%] lg:h-[12rem] max xl:w-[600px] 2xl:w-[800px] "
+                  placeholder="Hint: Copy + Paste their bio here "
+                  value={userInput}
+                  onChange={onUserChangedText}
+                  id="enterDescriptionBox"
+                />
               </div>
             </div>
-
-
-            <div className=" w-screen h-screen" id="enterGenerateButton">
-              <a
-                className=' text-white shadow-black/25'
-                //onClick={() => { setIsOpen(true); fetchCurrentOpeners(); }}
-                onClick={callGenerateEndpoint}
-              >
-                <img src="genButton.png" className="h-22 w-48 lg:h-24 lg:w-60 mt-8 mx-auto " alt="Generate Opener" />
-              </a>
-            </div>
-
-
           </div>
 
-          <div className="invisible lg:visible">
-            <div className="fixed left-4 bottom-4 text-white text-lg text-opacity-75">Made with 🧡 by Cheyenna & Christian Armstrong. Check our <a className="underline underline-offset-2" href="https://www.termsofusegenerator.net/live.php?token=JxycYwSYZJzn3E5cDHs0SZh9RAEWWtXb">terms of use.</a> </div>
-            <div className="fixed right-32 bottom-3 text-white text-lg text-opacity-75 "> <a href={`mailto:customerSupport@opener.chat?subject=Inquiry&body=Hi, I have a question about your product.`}>Customersupport@opener.chat</a></div>
-            <a
-              className=' fixed bottom-2 right-[0] text-white shadow-black/25'
-              href=""
 
-            >
-              <img src="facebookColored.png" className="w-12 h-10 " alt="Facebook" />
-            </a>
+          <div className=" w-screen h-screen" id="enterGenerateButton">
             <a
-              className=' fixed bottom-3 right-11 text-white shadow-black/25'
-              href=""
-
+              className=' text-white shadow-black/25'
+              //onClick={() => { setIsOpen(true); fetchCurrentOpeners(); }}
+              onClick={callGenerateEndpoint}
             >
-              <img src="instagramColored.png" className="w-8 h-8 " alt="Instagram" />
-            </a>
-            <a
-              className='fixed bottom-3 right-20 text-white shadow-black/25'
-              href=""
-
-            >
-              <img src="twitterColored.png" className=" w-10 h-8" alt="Twitter" />
+              <img src="genButton.png" className="h-22 w-48 lg:h-24 lg:w-60 mt-8 mx-auto " alt="Generate Opener" />
             </a>
           </div>
+
+
+        </div>
+
+        <div className="invisible lg:visible">
+          <div className="fixed left-4 bottom-4 text-white text-lg text-opacity-75">Made with 🧡 by Cheyenna & Christian Armstrong. Check our <a className="underline underline-offset-2" href="https://www.termsofusegenerator.net/live.php?token=JxycYwSYZJzn3E5cDHs0SZh9RAEWWtXb">terms of use.</a> </div>
+          <div className="fixed right-32 bottom-3 text-white text-lg text-opacity-75 "> <a href={`mailto:customerSupport@opener.chat?subject=Inquiry&body=Hi, I have a question about your product.`}>Customersupport@opener.chat</a></div>
+          <a
+            className=' fixed bottom-2 right-[0] text-white shadow-black/25'
+            href=""
+
+          >
+            <img src="facebookColored.png" className="w-12 h-10 " alt="Facebook" />
+          </a>
+          <a
+            className=' fixed bottom-3 right-11 text-white shadow-black/25'
+            href=""
+
+          >
+            <img src="instagramColored.png" className="w-8 h-8 " alt="Instagram" />
+          </a>
+          <a
+            className='fixed bottom-3 right-20 text-white shadow-black/25'
+            href=""
+
+          >
+            <img src="twitterColored.png" className=" w-10 h-8" alt="Twitter" />
+          </a>
         </div>
       </SignedIn >
 
