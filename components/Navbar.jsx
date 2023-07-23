@@ -5,14 +5,6 @@ import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 export const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
 
-    const changeBackground = () => {
-        if (window.scrollY >= 90) {
-            setNavbar(true);
-        } else {
-            setNavbar(false);
-        }
-    };
-    window.addEventListener('scroll', changeBackground);
     return (
         <>
             <nav className={navbar ? "flex w-screen z-50" : 'flex w-screen fixed z-50 '} >
