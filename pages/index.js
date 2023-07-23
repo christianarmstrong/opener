@@ -360,7 +360,7 @@ const Home = () => {
         </div>
 
         <div className="output-header-container  invisible" id="openerHeading">
-          <div className="fixed top-[15%] text-center sm:text-left leading-tight sm:top-[22%] md:top-[20%] lg:top-[15%] left-1/2 transform -translate-x-1/2 text-white text-[4em] sm:text-[3.5em] md:text-[4.2em] lg:text-[5.6em] xl:text-[7em]" >
+          <div className="fixed top-[10%] text-center sm:text-left leading-tight sm:top-[22%] md:top-[20%] lg:top-[15%] left-1/2 transform -translate-x-1/2 text-white text-[4em] sm:text-[3.5em] md:text-[4.2em] lg:text-[5.6em] xl:text-[7em]" >
             <h3>Your Opener</h3>
           </div>
         </div>
