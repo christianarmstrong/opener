@@ -13,7 +13,7 @@ const jsonParser = bodyParser.json();
 
 export default async function handler(req, res) {
     try {
-      console.log(req.body);
+      
       const { data, type } = req.body;
       res.status(200).json({ name: 'Got the webhook' });
   
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   
       // Handle the webhook
       if (type === 'session.created') {
-        supabase.from('user_data').upsert({ id: user_id });
+        console.log(supabase.from('user_data').upsert({ id: user_id }));
       }
     } catch (error) {
       console.error("Error handling webhook:", error);
