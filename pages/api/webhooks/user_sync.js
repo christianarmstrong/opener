@@ -13,9 +13,6 @@ const jsonParser = bodyParser.json();
 
 export default async function handler(req, res) {
     try {
-      // Wrap the API route handler with the jsonParser middleware
-      await jsonParser(req, res);
-  
       console.log(req.body);
       const { data, type } = req.body;
       console.log("Updating database with", data.id);
@@ -31,6 +28,6 @@ export default async function handler(req, res) {
       console.error("Error handling webhook:", error);
       return res.status(500).json({ error: "Failed to handle webhook" });
     }
-  }
+}
 
 
