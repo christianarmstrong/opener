@@ -1,15 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { createClient } from "@supabase/supabase-js";
-import bodyParser from 'body-parser';
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
     process.env.SUPABASE_KEY,
 
 );
-
-const jsonParser = bodyParser.json();
 
 export default async function handler(req, res) {
     try {
@@ -21,7 +18,8 @@ export default async function handler(req, res) {
   
       // Handle the webhook
       if (type === 'session.created') {
-        console.log(supabase.from('user_data').upsert({ id: user_id }));
+        const response = await supabase.from('user_data').upsert({ id: user_id })
+        console.log("Upsert response: ", response);
       }
     } catch (error) {
       console.error("Error handling webhook:", error);
