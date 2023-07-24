@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_KEY,
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_KEY,
 
 );
 
@@ -29,8 +29,8 @@ export default async function handler(req, res) {
 
 
     // Handle the webhook
-    if (type === 'user.created' || type === 'user.updated') {
-        return await supabase.from('users').upsert({ id: user_id, email: user_email });
+    if (type === 'session.created') {
+        await supabase.from('user_data').upsert({ id: user_id });
     }
     return null;
 }
