@@ -14,16 +14,15 @@ export default async function handler(req, res) {
     const user_id = data.user_id;
 
     // Handle the webhook
-    // Handle the webhook
     if (type === "session.created") {
       const {
-        data: response,
+        data,
         error,
-      } = await supabase.from("user_data").upsert({ id: user_id });
+      } = await supabase.from("user_data").upsert({ id: user_id }).select();
       if (error) {
         console.error("Upsert failed:", error.message);
       } else {
-        console.log("Upsert response:", response);
+        console.log("Upsert response:", data);
       }
     }
   } catch (error) {
