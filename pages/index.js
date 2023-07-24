@@ -208,7 +208,7 @@ const Home = () => {
           </div>
 
           <div className="">
-            <a href="/sign-up">
+            <a href="https://accounts.opener.chat/sign-up">
               <img
                 className="relative top-56 mx-auto lg:ml-[60%] xl:ml-[58%] 2xl:ml-[56%] min-[1700px]:ml-[51%] h-[4.5em] w-[18em] min-[484px]:w-[20em] min-[484px]:h-[5em] sm:w-[24em] sm:h-[6em] md:w-[28em] md:top-72 md:h-[7em] lg:w-[20em] lg:h-[5em]  lg:top-[14rem] "
                 alt="sum"
