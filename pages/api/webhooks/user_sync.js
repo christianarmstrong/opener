@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       const {
         data,
         error,
-      } = await supabase.from("user_data").upsert({ id: user_id }).select();
+      } = await supabase.from("user_data").upsert({ id: user_id });
       if (error) {
         console.error("Upsert failed:", error.message);
       } else {
