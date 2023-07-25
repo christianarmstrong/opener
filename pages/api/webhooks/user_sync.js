@@ -21,6 +21,7 @@ export default async function handler(req, res) {
             if (error) {
                 console.error("Upsert failed:", error.message);
             } else {
+                return data
                 console.log("Upsert response:", data);
             }
         }   
@@ -29,4 +30,5 @@ export default async function handler(req, res) {
     console.error("Error handling webhook:", error);
     return res.status(500).json({ error: "Failed to handle webhook" });
   }
+  console.log(upsertUser)
 }
