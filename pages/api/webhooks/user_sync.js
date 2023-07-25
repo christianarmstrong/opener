@@ -15,16 +15,15 @@ export default async function handler(req, res) {
 
     // Handle the webhook
     if (type === "session.created") {
-        useEffect(() => {
-            const upsertUser = async () => {
-                const {data, error} = await supabase.from("user_data").select();
-                if (error) {
-                    console.error("Upsert failed:", error.message);
-                } else {
-                    console.log("Upsert response:", data);
-                }
+        
+        const upsertUser = async () => {
+            const {data, error} = await supabase.from("user_data").select();
+            if (error) {
+                console.error("Upsert failed:", error.message);
+            } else {
+                console.log("Upsert response:", data);
             }
-        })
+        }   
     }
   } catch (error) {
     console.error("Error handling webhook:", error);
