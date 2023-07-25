@@ -25,10 +25,10 @@ export default async function handler(req, res) {
                 console.log("Upsert response:", data);
             }
         }   
+       console.log(upsertUser)
     }
   } catch (error) {
     console.error("Error handling webhook:", error);
     return res.status(500).json({ error: "Failed to handle webhook" });
   }
-  console.log(upsertUser)
 }
