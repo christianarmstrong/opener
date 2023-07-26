@@ -17,13 +17,13 @@ export default async function handler(req, res) {
     if (type === "session.created") {
         
         const upsertUser = () => {
-            const {data, error} = supabase.from("user_data").select();
+            const {responseData, error} = supabase.from("user_data").select();
             if (error) {
                 console.error("Upsert failed:", error.message);
                 return null
             } else {
-                console.log("Upsert response:", data);
-                return data
+                console.log("Upsert response:", responseData);
+                return responseData
             }
         }   
        console.log(upsertUser())
