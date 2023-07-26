@@ -52,26 +52,26 @@ const Home = () => {
     }
   }, []);
 
-  const getSubscription = (userID) => {
-      const subscription = supabase.from("user_data").select("subscription").eq("id", userID);
+  const getSubscription = async (userID) => {
+      const subscription = await supabase.from("user_data").select("subscription").eq("id", userID);
       console.log("Subscription: ",subscription)
       return subscription
   }
 
-  const getOpenersCreated = (userID) => {
-    const openersCreated = supabase.from("user_data").select("openers_created").eq("id", userID)
+  const getOpenersCreated = async (userID) => {
+    const openersCreated = await supabase.from("user_data").select("openers_created").eq("id", userID)
     console.log("Openers created", openersCreated)
     return openersCreated;
   }
 
-  const incrementOpenersCreated = (userID) => {
-    let currentOpenersCreated = getOpenersCreated(userID);
+  const incrementOpenersCreated = async (userID) => {
+    let currentOpenersCreated = await getOpenersCreated(userID);
     let incrementedOpenersCreated = currentOpenersCreated + 1
     supabase.from("user_data").update({ openers_created: incrementedOpenersCreated}).eq("id", userID)
   }
 
-  const generateButtonFunctionality = () => {
-    if(getSubscription(user.id) === "premium" || getOpenersCreated(user.id) >= 20) {
+  const generateButtonFunctionality = async () => {
+    if(await getSubscription(user.id) === "premium" || await getOpenersCreated(user.id) >= 20) {
       callGenerateEndpoint();
       incrementOpenersCreated(user.id);
     }
