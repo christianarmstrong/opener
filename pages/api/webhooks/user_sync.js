@@ -20,12 +20,13 @@ export default async function handler(req, res) {
             const {data, error} = supabase.from("user_data").select();
             if (error) {
                 console.error("Upsert failed:", error.message);
+                return null
             } else {
-                return data
                 console.log("Upsert response:", data);
+                return data
             }
         }   
-       console.log(upsertUser)
+       console.log(upsertUser())
     }
   } catch (error) {
     console.error("Error handling webhook:", error);
