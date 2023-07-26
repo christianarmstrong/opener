@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   try {
     const { data, type } = req.body;
     res.status(200).json({ name: "Got the webhook" });
-
+    console.log("Type of event: ", type)
     const user_id = data.user_id;
 
     // Define the upsertUser function outside the if block
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     // Handle the webhook
     if (type === "session.created") {
       const result = await upsertUser(); // Call the function to get the result
-      console.log(result); // Log the result
+      console.log("result of upsertUser", result); // Log the result
     }
   } catch (error) {
     console.error("Error handling webhook:", error);
