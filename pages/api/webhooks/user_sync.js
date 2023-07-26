@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     const { insertData, error } = await supabase
       .from('user_data')
       .insert([
-        { id: numericUserId, openers_created: '0', subscription: 'basic' },
+        { id: parseInt(numericUserId, 10), openers_created: '0', subscription: 'basic' },
       ])
       .select()
 
