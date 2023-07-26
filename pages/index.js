@@ -73,7 +73,7 @@ const Home = () => {
   }
 
   const generateButtonFunctionality = async () => {
-    if(await getSubscription(user.id) === "premium" || await getOpenersCreated(user.id) <= 20) {
+    if(await getSubscription(user.id) === "premium" || await getOpenersCreated(user.id) <= 5) {
       incrementOpenersCreated(user.id);
       callGenerateEndpoint();
     }
