@@ -8,10 +8,11 @@ const supabase = createClient(
 export default async function handler(req, res) {
   try {
 
+    const { data, type } = req.body;
+
     // Handle the webhook
     if (type === "session.created") {
-
-        const { data, type } = req.body;
+        
         const user_id = data.user_id;
         const { data: upsertUser, error: upsertError } = await 
             supabase.from("user_data").upsert([{ id: user_id, openers_created: 0, subscription: "basic" }], {onConflict: ["id"],});
