@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     if (type === "session.created") {
         
         const upsertUser = () => {
-            const {responseData, error} = supabase.from("user_data").select();
+            const {responseData, error} = await supabase.from("user_data").select();
             if (error) {
                 console.error("Upsert failed:", error.message);
                 return null
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
                 return responseData
             }
         }   
-       console.log(upsertUser())
+       console.log(await upsertUser())
     }
   } catch (error) {
     console.error("Error handling webhook:", error);
