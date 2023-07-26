@@ -19,17 +19,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { createClient } from "@supabase/supabase-js";
 import ReactPlayer from "react-player";
 
-const supabaseClient = async (supabaseAccessToken) => {
-  const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${supabaseAccessToken}` } },
-    }
-  );
-
-  return supabase;
-};
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_KEY
+);
 
 const Home = () => {
   const [age_userInput, age_setUserInput] = useState("");
@@ -43,18 +36,8 @@ const Home = () => {
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
   );
 
-  const { getToken } = useAuth();
   const { user } = useUser();
-  const fetchCurrentOpeners = async () => {
-    const supabaseAccessToken = await getToken({ template: "supabase" });
-    const supabase = await supabaseClient(supabaseAccessToken);
-    const { currentOpenerCount, error } = await supabase
-      .from("userData")
-      .select("currentOpenerCount");
-
-    console.log(`Current opener count is ${currentOpenerCount}`);
-    console.log(`error: ${error}`);
-  };
+  console.log(user.id);
 
   React.useEffect(() => {
     // Check to see if this is a redirect back from Checkout
@@ -71,21 +54,29 @@ const Home = () => {
   }, []);
 
   const getSubscription = (userID) => {
-      return supabase.subscription(userID);
+      return supabase.from("user_data").select("subscription").eq("id", userID);
   }
 
   const getOpenersCreated = (userID) => {
-    return supabase.openers_created(userID);
+    return supabase.from("user_data").select("openers_created").eq("id", userID);
+  }
+
+  const incrementOpenersCreated = (userID) => {
+    let currentOpenersCreated = getOpenersCreated(userID);
+    let incrementedOpenersCreated = currentOpenersCreated + 1
+    supabase.from("user_data").update({ openers_created: incrementedOpenersCreated}).eq("id", userID)
   }
 
   const generateButtonFunctionality = () => {
-    if(getSubscription(user.externalId) == "premium" || getOpenersCreated(user.externalId) <= 20) {
-      callGenerateEndpoint;
+    if(getSubscription(user.id) == "premium" || getOpenersCreated(user.id) <= 20) {
+      callGenerateEndpoint();
+      incrementOpenersCreated(user.id);
     }
     else {
       setIsOpen(true);
     }
   }
+
   const callGenerateEndpoint = async () => {
     
     setIsGenerating(true);
