@@ -69,13 +69,13 @@ const Home = () => {
   const incrementOpenersCreated = async (userID) => {
     let currentOpenersCreated = await getOpenersCreated(userID);
     let incrementedOpenersCreated = currentOpenersCreated + 1
-    supabase.from("user_data").update({ openers_created: incrementedOpenersCreated}).eq("id", userID)
+    await supabase.from("user_data").update({ openers_created: incrementedOpenersCreated}).eq("id", userID)
   }
 
   const generateButtonFunctionality = async () => {
     if(await getSubscription(user.id) === "premium" || await getOpenersCreated(user.id) <= 20) {
-      callGenerateEndpoint();
       incrementOpenersCreated(user.id);
+      callGenerateEndpoint();
     }
     else {
       setIsOpen(true);
