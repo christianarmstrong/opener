@@ -53,11 +53,15 @@ const Home = () => {
   }, []);
 
   const getSubscription = (userID) => {
-      return supabase.from("user_data").select("subscription").eq("id", userID);
+      const subscription = supabase.from("user_data").select("subscription").eq("id", userID);
+      console.log("Subscription: ",subscription)
+      return subscription
   }
 
   const getOpenersCreated = (userID) => {
-    return supabase.from("user_data").select("openers_created").eq("id", userID);
+    const openersCreated = supabase.from("user_data").select("openers_created").eq("id", userID)
+    console.log("Openers created", openersCreated)
+    return openersCreated;
   }
 
   const incrementOpenersCreated = (userID) => {
@@ -67,7 +71,7 @@ const Home = () => {
   }
 
   const generateButtonFunctionality = () => {
-    if(getSubscription(user.id) == "premium" || getOpenersCreated(user.id) <= 20) {
+    if(getSubscription(user.id) === "premium" || getOpenersCreated(user.id) >= 20) {
       callGenerateEndpoint();
       incrementOpenersCreated(user.id);
     }
