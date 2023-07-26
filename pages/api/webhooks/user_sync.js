@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     // Define the upsertUser function outside the if block
     const upsertUser = async () => {
       try {
-        const { data: responseData, error } = await supabase.from("user_data").select();
+        const { data: responseData, error } = await supabase.from("user_data").select("id");
         if (error) {
           console.error("Upsert failed:", error.message);
           return null;
