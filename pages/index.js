@@ -37,7 +37,6 @@ const Home = () => {
   );
 
   const { user } = useUser();
-  console.log(user.id);
 
   React.useEffect(() => {
     // Check to see if this is a redirect back from Checkout
