@@ -12,13 +12,11 @@ export default async function handler(req, res) {
     res.status(200).json({ name: "Got the webhook" });
     console.log("Type of event: ", type)
     const user_id = data.user_id;
-    const numericUserId = user_id.split("_")[1]; // Extract the numeric part after "user_"
-    
-    
+       
     const { insertData, error } = await supabase
       .from('user_data')
       .insert([
-        { id: parseInt(numericUserId, 10), openers_created: '0', subscription: 'basic' },
+        { id: user_id, openers_created: '0', subscription: 'basic' },
       ])
       .select()
 
