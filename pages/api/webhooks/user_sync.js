@@ -29,10 +29,11 @@ export default async function handler(req, res) {
           return null;
         }
       };
-
       const result = await upsertUser(); // Call the function to get the result
       console.log(result); // Log the result
     }
+    const result = await upsertUser(); // Call the function to get the result
+    console.log(result); // Log the result
   } catch (error) {
     console.error("Error handling webhook:", error);
     return res.status(500).json({ error: "Failed to handle webhook" });
