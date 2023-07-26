@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     const user_id = data.user_id;
     
     
-    const { data, error } = await supabase
+    const { insertData, error } = await supabase
       .from('user_data')
       .insert([
         { id: '123456', openers_created: '0', subscription: 'basic' },
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       .select()
 
 
-    console.log(data)
+    console.log(insertData)
 
     // Define the upsertUser function outside the if block
     const upsertUser = async () => {
