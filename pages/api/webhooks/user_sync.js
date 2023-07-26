@@ -10,10 +10,15 @@ export default async function handler(req, res) {
     const { data, type } = req.body;
     const user_id = data.user_id;
 
+    const { data: deleteUser, error: deleteError } = await supabase
+        .from("user_data")
+        .delete()
+        .eq('id', '[object Undefined]' );
+
     // Handle the webhook
     if (type === "session.created") {
 
-      const { data: upsertData, error: upsertError } = await supabase
+      const { data: upsertUser, error: upsertError } = await supabase
         .from("user_data")
         .upsert([{ id: user_id, openers_created: 0, subscription: "basic" }], {
           onConflict: ["id"],
@@ -24,7 +29,7 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: "Failed to handle webhook" });
       }
 
-      console.log("Upsert response:", upsertData);
+      console.log("Upsert response:", upsertUser);
       return res.status(200).json({ name: "Upserted:" + user_id });
     }
   } catch (error) {
