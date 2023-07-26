@@ -520,7 +520,7 @@ const Home = () => {
           <div className=" w-screen h-screen" id="enterGenerateButton">
             <a
               className=" text-white shadow-black/25"
-              onClick={callGenerateEndpoint}
+              onClick={generateButtonFunctionality}
             >
               <img
                 src="genButton.png"
