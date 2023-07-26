@@ -17,6 +17,7 @@ export default async function handler(req, res) {
       .from('user_data')
       .select('openers_created')
 
+    console.log(data)
 
     // Define the upsertUser function outside the if block
     const upsertUser = async () => {
