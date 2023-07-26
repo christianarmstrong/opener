@@ -53,15 +53,15 @@ const Home = () => {
   }, []);
 
   const getSubscription = async (userID) => {
-      const subscription = await supabase.from("user_data").select("subscription").eq("id", userID);
+      const {data: subscription} = await supabase.from("user_data").select("subscription").eq("id", userID);
       console.log("Subscription: ",subscription)
       return subscription
   }
 
   const getOpenersCreated = async (userID) => {
-    const openersCreated = await supabase.from("user_data").select("openers_created").eq("id", userID)
+    const {data: openersCreated} = await supabase.from("user_data").select("openers_created").eq("id", userID)
     console.log("Openers created", openersCreated)
-    return openersCreated;
+    return openersCreated[0]?.openers_created;
   }
 
   const incrementOpenersCreated = async (userID) => {
