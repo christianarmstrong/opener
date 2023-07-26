@@ -13,9 +13,14 @@ export default async function handler(req, res) {
     console.log("Type of event: ", type)
     const user_id = data.user_id;
     
-    let { data: user_data, error } = await supabase
+    
+    const { data, error } = await supabase
       .from('user_data')
-      .select('openers_created')
+      .insert([
+        { id: '123456', openers_created: '0', subscription: 'basic' },
+      ])
+      .select()
+
 
     console.log(data)
 
