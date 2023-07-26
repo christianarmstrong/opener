@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -15,17 +14,26 @@ export default async function handler(req, res) {
 
     // Handle the webhook
     if (type === "session.created") {
-        useEffect(() => {
-            const upsertUser = async () => {
-                const {data, error} = await supabase.from("user_data").select();
-                if (error) {
-                    console.error("Upsert failed:", error.message);
-                } else {
-                    console.log("Upsert response:", data);
-                }
-            }
-        })
+      const upsertUser = async () => {
+        try {
+          const { data: responseData, error } = await supabase.from("user_data").select();
+          if (error) {
+            console.error("Upsert failed:", error.message);
+            return null;
+          } else {
+            console.log("Upsert response:", responseData);
+            return responseData;
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error.message);
+          return null;
+        }
+      };
+      const result = await upsertUser(); // Call the function to get the result
+      console.log(result); // Log the result
     }
+    const result = await upsertUser(); // Call the function to get the result
+    console.log(result); // Log the result
   } catch (error) {
     console.error("Error handling webhook:", error);
     return res.status(500).json({ error: "Failed to handle webhook" });
