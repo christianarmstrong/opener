@@ -9,9 +9,9 @@ export default async function handler(req, res) {
   try {
 
     const { data, type } = req.body;
-
+    const { user } = useUser();
     // Handle the webhook
-    if (type === "session.created") {
+    if (type === "session.created" && data.user_id === user.id) {
         
         const user_id = data.user_id;
         const { data: upsertUser, error: upsertError } = await 
