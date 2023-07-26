@@ -7,42 +7,25 @@ const supabase = createClient(
 
 export default async function handler(req, res) {
   try {
-
     const { data, type } = req.body;
-    res.status(200).json({ name: "Got the webhook" });
-    console.log("Type of event: ", type)
     const user_id = data.user_id;
-       
-    const { insertData, error } = await supabase
-      .from('user_data')
-      .insert([
-        { id: user_id, openers_created: 0, subscription: 'basic' },
-      ])
-
-
-    console.log(insertData)
-
-    // Define the upsertUser function outside the if block
-    const upsertUser = async () => {
-      try {
-        const { data: responseData, error } = await supabase.from("user_data").select();
-        if (error) {
-          console.error("Upsert failed:", error.message);
-          return null;
-        } else {
-          console.log("Upsert response:", responseData);
-          return responseData;
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-        return null;
-      }
-    };
 
     // Handle the webhook
     if (type === "session.created") {
-      const result = await upsertUser(); // Call the function to get the result
-      console.log("result of upsertUser", result); // Log the result
+
+      const { data: upsertData, error: upsertError } = await supabase
+        .from("user_data")
+        .upsert([{ id: user_id, openers_created: 0, subscription: "basic" }], {
+          onConflict: ["id"],
+        });
+
+      if (upsertError) {
+        console.error("Upsert failed:", upsertError.message);
+        return res.status(500).json({ error: "Failed to handle webhook" });
+      }
+
+      console.log("Upsert response:", upsertData);
+      return res.status(200).json({ name: "Upserted:" + user_id });
     }
   } catch (error) {
     console.error("Error handling webhook:", error);
