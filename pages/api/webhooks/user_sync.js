@@ -12,7 +12,9 @@ export default async function handler(req, res) {
     res.status(200).json({ name: "Got the webhook" });
     console.log("Type of event: ", type)
     const user_id_raw = data.user_id;
+    console.log("user id from webhook: ", user_id_raw)
     const user_id = parseInt(user_id_raw, 10);
+    console.log("user id after parsing: ", user_id)
     
     
     const { insertData, error } = await supabase
