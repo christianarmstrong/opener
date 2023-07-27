@@ -23,7 +23,6 @@ export default async function handler(req, res) {
             return res.status(500).json({ error: "Failed to handle webhook" });
         }
 
-        console.log("Insert response:", insertUser);
         return res.status(200).json({ name: "Inserted:" + data.id });
     }
 
