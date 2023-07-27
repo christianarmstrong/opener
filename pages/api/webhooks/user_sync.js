@@ -10,13 +10,13 @@ export default async function handler(req, res) {
   try {
 
     const { data, type } = req.body;
-    const { user } = useUser();
+    
     // Handle the webhook
-    if (type === "user.created" && data.user_id === user.id) {
+    if (type === "user.created") {
         
         const user_id = data.user_id;
         const { data: upsertUser, error: upsertError } = await 
-            supabase.from("user_data").insert([{ id: user_id, openers_created: 0, subscription: "basic" }], {onConflict: ["id"],});
+            supabase.from("user_data").insert([{ id: user_id, openers_created: 0, subscription: "basic" }]);
 
         if (upsertError) {
             console.error("Upsert failed:", upsertError.message);
