@@ -6,6 +6,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_KEY
 );
 
+// Adds new users id to supabase when they creates their profile.
 export default async function handler(req, res) {
   try {
 
