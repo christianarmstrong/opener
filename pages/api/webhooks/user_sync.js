@@ -10,21 +10,20 @@ export default async function handler(req, res) {
   try {
 
     const { data, type } = req.body;
-    
+
     // Handle the webhook
     if (type === "user.created") {
         
-        const user_id = data.user_id;
-        const { data: upsertUser, error: upsertError } = await 
-            supabase.from("user_data").insert([{ id: user_id, openers_created: 0, subscription: "basic" }]);
+        const { data: insertUser, error: insertError } = await 
+            supabase.from("user_data").insert([{ id: data.id, openers_created: 0, subscription: "basic" }]);
 
-        if (upsertError) {
-            console.error("Upsert failed:", upsertError.message);
+        if (insertError) {
+            console.error("Insert failed:", insertError.message);
             return res.status(500).json({ error: "Failed to handle webhook" });
         }
 
-        console.log("Upsert response:", upsertUser);
-        return res.status(200).json({ name: "Upserted:" + user_id });
+        console.log("Insert response:", insertUser);
+        return res.status(200).json({ name: "Inserted:" + data.id });
     }
 
   } catch (error) {
